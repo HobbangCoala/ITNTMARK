@@ -1,0 +1,170 @@
+﻿<Window x:Class="ITNTMARK.SearchSequenceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITNTMARK"
+        xmlns:propoerties="clr-namespace:ITNTMARK.Properties"
+        mc:Ignorable="d"
+        Title="SearchSequenceWindow" Height="358" Width="870">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="640*"/>
+            <ColumnDefinition Width="180*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="89*"/>
+            <RowDefinition Height="202*"/>
+            <RowDefinition Height="51*"/>
+        </Grid.RowDefinitions>
+        <Grid >
+            <Border BorderBrush="Black" BorderThickness="1" Margin="5,0,0,0"/>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" Height="28" Margin="0,10,0,0">
+                    <Label Height="28" Width="5"/>
+                    <Label Content="SEQUENCE" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="24" Width="80" FontSize="14" FontWeight="Bold" Padding="0" Margin="0,2,0,0"/>
+                    <Label Height="28" Width="10"/>
+                    <TextBox x:Name="tbxSeq" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="24" Width="100" FontSize="14" FontWeight="Bold" Padding="0" Margin="0,2,0,0"/>
+                    <Label VerticalAlignment="Top" Height="28" Width="200"/>
+                    <Button x:Name="btnSearchBySeq" Content="SEQUENCE" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="100" Click="btnSearchBySeq_Click" Margin="0,2,0,0"/>
+                </StackPanel>
+                <Label Height="10"/>
+                <StackPanel Orientation="Horizontal" Height="28" Margin="0,0,0,0">
+                    <Label Height="28" Width="5"/>
+                    <Label Content="VIN" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="24" Margin="0,2,0,0" Width="80" FontSize="14" FontWeight="Bold" Padding="0"/>
+                    <Label Height="28" Width="10"/>
+                    <TextBox x:Name="tbxVin" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="24" Margin="0,2,0,0" Width="210" FontSize="14" FontWeight="Bold" Padding="0" />
+                    <Label Height="28" Width="5"/>
+                    <CheckBox x:Name="cbxPartialComapre" Content="PARTIAL" HorizontalAlignment="Left" Height="24" Margin="0,2,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="80" FontWeight="Bold" FontSize="12" IsChecked="True"/>
+                    <Label Height="28" Width="5"/>
+                    <Button x:Name="btnSearchByVin" Content="VIN" HorizontalAlignment="Left" Height="24" Margin="0,2,0,0" VerticalAlignment="Top" Width="100" Click="btnSearchByVin_Click"/>
+                    <Label Height="28" Width="5"/>
+                    <Button x:Name="btnSearchBySeqVin" Content="SEQUENCE+VIN" HorizontalAlignment="Left" Height="24" Margin="0,2,0,0" VerticalAlignment="Top" Width="130" Click="btnSearchBySeqVin_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Margin="0,0,0,0" Grid.Row="1" >
+            <Border BorderBrush="Black" BorderThickness="1,0,1,1" Margin="5,0,0,0"/>
+            <DataGrid x:Name="dgSearch" HorizontalAlignment="Left" Height="170" Margin="15,5,0,0" VerticalAlignment="Top" Width="645" RowHeaderWidth="0" AutoGenerateColumns="False" CanUserSortColumns="False" IsReadOnly="True" ColumnHeaderStyle="{StaticResource HeaderStyle}">
+                <!--<DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="시작 위치 설정" Height="30" FontSize="18" FontWeight="Bold" Click="MenuItem_SetMarkPoint" Foreground="Red"/>
+                        <Separator Visibility="Visible"/>
+                        <MenuItem Header="각인 완료 처리" Height="30" FontSize="18" FontWeight="Bold" Click="MenuItem_Move2Complete" Foreground="Red"/>
+                        <Separator Visibility="Visible"/>
+                        <MenuItem Header="데이터 삭제" Height="30" FontSize="18" FontWeight="Bold" Click="MenuItem_DeleteData" Foreground="Red"/>
+                        <Separator Visibility="Visible"/>
+                        <MenuItem Header="데이터 완전 삭제" Height="30" FontSize="18" FontWeight="Bold" Click="MenuItem_DeleteRawData" Foreground="Red"/>
+                        <Separator Visibility="Visible"/>
+                        <MenuItem Header="비젼 시작 위치 설정" Height="30" FontSize="18" FontWeight="Bold" Click="MenuItem_PaletteSetMarkPoint" Foreground="Red"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>-->
+                <DataGrid.Columns>
+                    <!--<DataGridCheckBoxColumn x:Name="checkbox" Binding="{Binding CHECKFLAG}"/>-->
+                    <DataGridTextColumn Header="DATE" Width="4*" Binding="{Binding PRODUCTDATE, StringFormat={}{0:yyyy-MM-dd}}" Visibility="Collapsed">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="16"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="SEQUENCE" Width="2*" Binding="{Binding SEQUENCE}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="16"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="VIN" Width="6*" Binding="{Binding VIN}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="16"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="MODEL" Width="2*" Binding="{Binding CARTYPE}" Visibility="Visible">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="16"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="BODY NUMBER" Width="4*" Binding="{Binding BODYNO}" Visibility="Collapsed">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="16"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="CAR TYPE" Width="2*" Binding="{Binding RAWCARTYPE}" Visibility="Visible">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="16"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="전산" Width="2*" Binding="{Binding RAWBODY}" Visibility="Collapsed">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="16"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="REGION" Width="2*" Binding="{Binding IDPLATE}" Visibility="Collapsed">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="16"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="PLC값" Width="2*" Binding="{Binding PLCVALUE}" Visibility="Collapsed">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="16"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="CHECKFLAG" Binding="{Binding CHECKFLAG}" Visibility="Hidden">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="16"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Button x:Name="btnExit" Content="EXIT" HorizontalAlignment="Left" Height="35" 
+                        Style="{StaticResource ITNTButton}" Margin="30,20,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" FontSize="16" FontFamily="Global Sans Serif" Click="btnExit_Click"/>
+        </Grid>
+        <Grid Grid.Column="1" Margin="0,0,0,0" Grid.Row="1" >
+            <Label Content="COUNT" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="55" FontSize="14" FontWeight="Bold" Padding="0"/>
+            <Label x:Name="lblSearchCount" Content="0" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="25" Margin="70,10,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontSize="14" FontWeight="Bold" Padding="0" BorderBrush="Black" BorderThickness="0.5"/>
+            <Button x:Name="btnGo2SearchData" Content="GO TO SELECTED DATA" HorizontalAlignment="Center" Height="30" Margin="0,45,0,0" VerticalAlignment="Top" Width="159" FontSize="14" FontWeight="Bold" Click="btnGo2SearchData_Click" />
+        </Grid>
+        <Grid Grid.Row="2" Margin="0,0,0,0">
+            <Label x:Name="lblMessage" HorizontalAlignment="Left" Content="" HorizontalContentAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="27" Margin="20,10,0,0" Width="620" FontSize="14" FontWeight="Bold" Padding="5,0,5,0"/>
+        </Grid>
+    </Grid>
+</Window>

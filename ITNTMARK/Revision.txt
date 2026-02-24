@@ -1,0 +1,68 @@
+[2026.02.13]
+1. Cleaning Test 추가
+2. Dry Run 테스트 활성화
+
+
+
+
+[2025.04.02]
+1. NO MARKING DATA FOUND Error 확인을 위해 로그 추가
+2. Laser와 통신에서 송신 예외 발생 시 다시 연결하도록 수정
+
+
+
+
+
+
+
+
+[2024.12.27]
+1. Add emmision on
+2. Modified use cleaning radio button 
+
+[2024.12.26]
+1. Modified cultureinfo 
+
+
+[2014.11.28]
+1. VISION 통신 변경
+
+
+[2024.10.14]
+1. LINK 명령 실행 후 LINK 상태 센서를 1초 후 읽어서 처리하도록 수정
+ 1) 기존
+    - LINK 상태 센서를 명령 실행 후 바로 읽음
+    - LINK 상태 확인 후 에러 처리가 없음.
+ 2) 수정
+    - LINK 상태 센서를 명령 실행한 후 1초 지난 후에 센서 상태 읽음
+    - LINK 상태 확인 후 에러 처리하도록 수정
+
+
+[2024.08.26]
+1. 세팅화면에 비전레디, 비전완료 버튼 추가
+2. marking corner 버튼 삭제
+3. platecheck 버튼 아래 옵션 제거 (coniuous는 제외)
+4. run marking 버튼 아래 옵션 제거
+
+[08.24]
+1. 거리 센서 통신 방식을 51라인 방식으로 변경
+2. ReadSensor함수에 count 추가하고 ReadSensor2함수 삭제
+
+[2024.08.21]
+화면에 표시되는 레이저 온도 종류 변경
+  - 기존 : Case 온도 표시
+  - 변경 : Board 온도 표시
+
+[2024.08.20]
+1. Manual Marking 시 경사도 설정값을 Slope Manual 사용하도록 수정
+  - 기존 : Auto Marking과 동일한 경사도 설정값 사용
+  - 변경 : Auto Marking과 다른 경사도 설정값 사용하도록 수정
+
+[2024.08.17]
+1 경사도 체크 시 차이값 설정 변경
+  - 기존 : 1mm인 경우 에러 발생 (하드코딩)
+  - 변경 : MarkHeader.ini에서 설정할 수 있도록 수정
+2. 경사도 체크 값을 수정할 수 있도록 화면에 추가
+  - Marking Header 설정값 항목에 추가
+
+

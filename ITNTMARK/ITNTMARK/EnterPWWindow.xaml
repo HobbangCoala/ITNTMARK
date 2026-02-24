@@ -1,0 +1,28 @@
+﻿<Window x:Class="ITNTMARK.EnterPWWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITNTMARK"
+        mc:Ignorable="d"
+        Title="Enter Password" Height="250" Width="425" ResizeMode="NoResize" WindowStartupLocation="Manual" WindowStyle="None"
+        FocusManager.FocusedElement="{Binding ElementName=pwxEnterPassword}">
+    <Grid>
+        <Border BorderBrush="Goldenrod" BorderThickness="2" HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="425"/>
+        <Label Content="ENTER PASSWORD" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="41" Margin="70,21,0,0" VerticalAlignment="Top" Width="300" FontSize="20" FontFamily="Malgun Gothic" FontWeight="Bold" />
+        <Grid Margin="85,55,95,170" Visibility="Hidden">
+            <Label Content="User ID" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="72" FontFamily="Global Sans Serif" FontWeight="Bold"/>
+            <TextBox x:Name="tbxUserID" HorizontalAlignment="Left" Height="25" Margin="78,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="167" FontFamily="Global Sans Serif" FontWeight="Bold"/>
+        </Grid>
+        <Grid Margin="85,85,95,130">
+            <Label Content="PASSWORD" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="80" FontFamily="Malgun Gothic" FontWeight="Bold" Margin="0,3,0,0" />
+            <PasswordBox x:Name="pwxEnterPassword" TabIndex="0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="82,3,0,0" VerticalAlignment="Top" Width="160" Height="25" FontFamily="Global Sans Serif" FontWeight="Bold" KeyDown="pwxEnterPassword_KeyDown" KeyUp="pwxEnterPassword_KeyUp"/>
+        </Grid>
+        <Grid Margin="94,177,95,35">
+            <Button x:Name="btnEnterPWOK" Style="{StaticResource ITNTButton}" Content="OK" TabIndex="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.067,-0.227" FontFamily="Global Sans Serif" FontSize="14" FontWeight="Bold" Height="33" IsDefault="True" Click="btnEnterPWOK_Click"/>
+            <Button x:Name="btnEnterPWCancel" Style="{StaticResource ITNTButton}" Content="CANCEL" TabIndex="2" HorizontalAlignment="Left" Margin="145,0,0,0" VerticalAlignment="Top" Width="85" FontSize="14" FontWeight="Bold" FontFamily="Global Sans Serif" Height="33" IsDefault="True" IsCancel="True"/>
+        </Grid>
+        <Label x:Name="lblEnterPWResult" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="12,120,11,0" VerticalAlignment="Top" Width="396" Foreground="#FFF12A2A" FontFamily="Global Sans Serif" FontSize="14" Height="25"/>
+        <Label x:Name="lblEnterPWResult2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="12,145,11,0" VerticalAlignment="Top" Width="396" Foreground="#FFF12A2A" FontFamily="Global Sans Serif" FontSize="14" Height="25"/>
+    </Grid>
+</Window>
