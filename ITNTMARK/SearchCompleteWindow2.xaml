@@ -1,0 +1,276 @@
+﻿<Window x:Class="ITNTMARK.SearchCompleteWindow2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:ITNTMARK"
+        mc:Ignorable="d"
+        Title="SearchCompleteWindow" Height="900" Width="1600" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="165*"/>
+            <RowDefinition Height="570*"/>
+            <RowDefinition Height="64*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Label Content="SEARCH COMPLETE DATA" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="50" Margin="440,10,0,0" VerticalAlignment="Top" Width="735" FontSize="26" FontWeight="Bold"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="140" Margin="10,10,0,0" VerticalAlignment="Top" Width="1572"/>
+            <StackPanel Margin="27,36,0,0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="412" Height="30">
+                <Label Content="DATE" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" Margin="0,1,0,0" VerticalAlignment="Top" Width="128" FontWeight="Bold" FontSize="14"/>
+                <Label HorizontalAlignment="Left" Height="28" Margin="0,1,0,0" VerticalAlignment="Top" Width="18"/>
+                <DatePicker x:Name="dpkStartDate" HorizontalAlignment="Left" Height="28" Margin="0,1,0,0" VerticalAlignment="Top" Width="110"
+                        SelectedDate="{x:Static System:DateTime.Now}" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+                <Label Content="~" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,1,0,0" VerticalAlignment="Top" Width="33" Height="28" FontSize="14"/>
+                <DatePicker x:Name="dpkEndDate" HorizontalAlignment="Left" Height="28" Margin="0,1,0,0" VerticalAlignment="Top" Width="110"
+                        SelectedDate="{x:Static System:DateTime.Now}" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+            </StackPanel>
+            <!--<StackPanel Margin="452,36,0,0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="470" Height="30">
+                <Label Content="종류" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" Margin="0,1,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" FontSize="14"/>
+                <Label HorizontalAlignment="Left" Height="28" Margin="0,1,0,0" VerticalAlignment="Top" Width="10"/>
+                <RadioButton x:Name="rbtnSearchAllPrintedType" Content="전체" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,7,0,0" VerticalAlignment="Top" Height="19" Width="80" FontSize="14" FontWeight="Bold"/>
+                <RadioButton x:Name="rbtnSearchNormalPrintedType" Content="일반각인" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,7,0,0" VerticalAlignment="Top" Height="19" Width="100" FontSize="14" FontWeight="Bold"/>
+                <RadioButton x:Name="rbtnSearchRePrintedType" Content="재각인" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="0,7,0,0" VerticalAlignment="Top" Height="19" Width="80" FontWeight="Bold" FontSize="14"/>
+            </StackPanel>-->
+            <StackPanel Margin="452,36,0,0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="470" Height="30">
+                <Label Content="CAR TYPE" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" Margin="0,1,0,0" VerticalAlignment="Top" Width="100" FontSize="14" FontWeight="Bold"/>
+                <Label HorizontalAlignment="Left" Height="28" Margin="0,1,0,0" VerticalAlignment="Top" Width="10"/>
+                <ComboBox x:Name="cbxSearchTypeCombo" VerticalContentAlignment="Center" Width="195" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>
+            <!--<StackPanel Margin="920,76,0,0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="470" Height="30" Visibility="Hidden">
+                <Label Content="BODY NO" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" Margin="0,1,0,0" VerticalAlignment="Top" Width="100" FontSize="14" FontWeight="Bold"/>
+                <Label HorizontalAlignment="Left" Height="28" Margin="0,1,0,0" VerticalAlignment="Top" Width="10"/>
+                <TextBox x:Name="tbxSearchBody" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="28" Margin="0,1,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" FontSize="14"/>
+            </StackPanel>-->
+            <StackPanel Margin="452,76,0,0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="470" Height="30">
+                <Label Content="VIN" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="28" Margin="0,1,0,0" VerticalAlignment="Top" Width="100" FontSize="14" FontWeight="Bold"/>
+                <Label HorizontalAlignment="Left" Height="28" Margin="0,1,0,0" VerticalAlignment="Top" Width="10"/>
+                <TextBox x:Name="tbxSearchVIN" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="28" Margin="0,1,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" FontSize="14"/>
+                <Label HorizontalAlignment="Left" Height="28" Margin="0,1,0,0" VerticalAlignment="Top" Width="10"/>
+                <CheckBox x:Name="cbxSelPartialVIN" VerticalContentAlignment="Center" Content="PARTIAL" Height="21" Margin="0,4,0,0" VerticalAlignment="Top" Width="80" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>
+            <Button x:Name="btnSearch" Content="SEARCH" HorizontalAlignment="Left" Height="44" Margin="1000,30,0,90" Width="150" Click="btnSearch_Click" FontSize="18" FontWeight="Bold"/>
+            <Button x:Name="btnallSearch" Content="ALL SEARCH" HorizontalAlignment="Left" Height="44" Margin="1000,80,0,40" Width="150" Click="btnallSearch_Click" FontSize="18" FontWeight="Bold"/>
+            <Button x:Name="btnExit" Content="EXIT" HorizontalAlignment="Left" Height="60" 
+                Style="{StaticResource ITNTButton}" Margin="1400,50,0,0" VerticalAlignment="Top" Width="150" FontWeight="Bold" FontSize="18" FontFamily="Global Sans Serif" IsDefault="True" Click="btnSearchExit_Click" RenderTransformOrigin="0.172,1.071" IsCancel="True"/>
+            <ListBox x:Name="lsbResult" HorizontalAlignment="Left" Height="168" Margin="29,690,0,0" VerticalAlignment="Top" Width="832" BorderBrush="Black" BorderThickness="2"/>
+        </Grid>
+
+
+
+        <Grid Grid.Row="2">
+            <Border BorderBrush="Black" Background="#FFE6F5E6" BorderThickness="2" HorizontalAlignment="Left" Height="570" Margin="10,0,0,-25" VerticalAlignment="Top" Width="1572"/>
+            <DataGrid x:Name="dgdComplete" HorizontalAlignment="Left" Height="550" Margin="25,10,0,0" VerticalAlignment="Top" Width="1545"
+                  RowHeaderWidth="0" CanUserAddRows ="False" AutoGenerateColumns="False" CanUserSortColumns="False" RowHeight="25" SelectionMode="Extended" IsReadOnly="True">
+                <DataGrid.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FF374697"/>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="#FF374697"/>
+                </DataGrid.Resources>
+                <DataGrid.ColumnHeaderStyle>
+                    <StaticResource ResourceKey="HeaderStyle2"/>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="PRODUCT DATE" Width="3*" Binding="{Binding PRODUCTDATE, StringFormat={}{0:yyyy-MM-dd}}" Visibility="Collapsed">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="MARK DATE" Width="3*" Binding="{Binding MARKDATE, StringFormat={}{0:yyyy-MM-dd}}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="MARK TIME" Width="3*" Binding="{Binding MARKTIME}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="SEQUENCE" Width="3*" Binding="{Binding SEQUENCE}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="VIN" Width="6*" Binding="{Binding VIN}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="MODEL" Width="2*" Binding="{Binding CARTYPE}" Visibility="Visible">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="CAR TYPE" Width="2*" Binding="{Binding RAWCARTYPE}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="BODY NO" Width="3*" Binding="{Binding BODYNO}" Visibility="Collapsed">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+
+                    <DataGridTextColumn Header="DISTANCE1" Width="2*" Binding="{Binding PLATECHECK01}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="DISTANCE2" Width="2*" Binding="{Binding PLATECHECK02}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="DISTANCE3" Width="2*" Binding="{Binding PLATECHECK03}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="DISTANCE4" Width="2*" Binding="{Binding PLATECHECK04}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="DISTANCE5" Width="2*" Binding="{Binding PLATECHECK05}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="DISTANCE6" Width="2*" Binding="{Binding PLATECHECK06}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="DISTANCE7" Width="2*" Binding="{Binding PLATECHECK07}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="REGION" Width="2*" Binding="{Binding IDPLATE}" Visibility="Collapsed">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="PLC값" Width="2*" Binding="{Binding PLCVALUE}" Visibility="Collapsed">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="2차각인여부" Width="2*" Binding="{Binding MULTIFLAG}" Visibility="Collapsed">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="각인순서" Width="2*" Binding="{Binding MARKORDER}" Visibility="Collapsed">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Label Content="COUNT" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="175" Height="30" FontWeight="Bold" Margin="15,10,0,0" Background="#FFC8C8C8" Foreground="Blue"/>
+            <Label x:Name="lblCompDataCount" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="30" FontWeight="Bold" Margin="205,10,0,0" Background="#FFC8C8C8" Foreground="Blue"/>
+        </Grid>
+    </Grid>
+</Window>

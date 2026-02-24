@@ -1,0 +1,863 @@
+﻿<Window x:Class="ITNTMARK.SetControllerWindow2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITNTMARK"
+        mc:Ignorable="d"
+        Title="SetControllerWindow2" Height="900" Width="1600" Closing="Window_Closing" Closed="Window_Closed" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged">
+    <Grid>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1600" Height="875" >
+            <TabItem Header="TEST" FontSize="18" FontWeight="Bold" Width="150" Height="40" VerticalAlignment="Top">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FF0F4AD3" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Margin="10,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="850*"/>
+                        <ColumnDefinition Width="700*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <!--<ColumnDefinition Width="915*"/>
+                        <ColumnDefinition Width="661*"/>-->
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="140*"/>
+                        <RowDefinition Height="100*"/>
+                        <RowDefinition Height="80*"/>
+                        <RowDefinition Height="290*"/>
+                        <RowDefinition Height="190*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" >
+                        <Grid x:Name="PlateColor" Height="110" Width="1273" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,10,0,0" Background="#FF566272"/>
+                        <Label x:Name="lblDispMinXMaxY" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="170,20,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="100" BorderBrush="#FF566272" BorderThickness="1" Foreground="#FFF9180D" FontSize="10" Background="#FF566272" Padding="0"/>
+                        <Label x:Name="lblDispMinXMinY" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="170,85,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="100" BorderBrush="#FF586270" BorderThickness="1" Foreground="#FFF9180D" FontSize="10" Background="#FF566272" Padding="0"/>
+                        <Label x:Name="lblDispCenXMinY" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="580,85,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="100" BorderBrush="#FF566272" BorderThickness="1" Foreground="#FFF11F15" FontSize="10" Background="#FF566272" Padding="0"/>
+                        <Label x:Name="lblDispMaxXMinY" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="990,85,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="100" BorderBrush="#FF566272" BorderThickness="1" Foreground="#FFF9180D" FontSize="10" Background="#FF566272" Padding="0"/>
+                        <Label x:Name="lblDispMaxXMaxY" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="990,20,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="100" BorderBrush="#FF5D636B" BorderThickness="1" Foreground="#FFF1170D" FontSize="10" Background="#FF566272" Padding="0"/>
+                        <Label x:Name="lblDispCenXMaxY" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="580,20,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="100" BorderBrush="#FF566272" BorderThickness="1" Foreground="#FFF9180D" FontSize="10" Background="#FF566272" Padding="0"/>
+                        <Label x:Name="lblDispCenXCenY" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="580,53,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="100" BorderBrush="#FF576272" BorderThickness="1" FontSize="10" FontWeight="Bold" Padding="0"/>
+
+                        <Grid x:Name="GridPallete" HorizontalAlignment="Left" Height="110" Margin="1280,10,0,0" VerticalAlignment="Top" Width="35" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" />
+                        <Label x:Name="TxtMaxOffset" Content="+0.50" HorizontalAlignment="Left" Margin="1320,0,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" Foreground="#FFFF4B00" Height="30" Width="60" Padding="0" Grid.Row="1" Grid.Column="2"/>
+                        <Label x:Name="TxtZeroOffset" Content="  0" HorizontalAlignment="Left" Margin="1320,52,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="18" FontWeight="Bold" Foreground="#FF1C8631" Height="30" Width="60" Padding="0"/>
+                        <Label x:Name="TxtMinOffset" Content="-0.50" HorizontalAlignment="Left" Margin="1320,100,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" Foreground="#FF00B4FF" Height="30" Width="60" Padding="0"/>
+
+                        <Label x:Name="lblDisplacementVal1" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="40" Margin="1400,20,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="106" BorderBrush="#FFB01717" BorderThickness="1" FontSize="16"/>
+                        <Label x:Name="lblDisplacementVal2" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="40" Margin="1400,70,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="106" BorderBrush="Black" BorderThickness="1" FontSize="18" FontWeight="Bold" Foreground="#FF151010"/>
+                    </Grid>
+                    <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"  >
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0" Height="85" Width="1280" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <Canvas x:Name="cvsshowChar00" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar01" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar02" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar03" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar04" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar05" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar06" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar07" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar08" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar09" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar10" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar11" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar12" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar13" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar14" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar15" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar16" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar17" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                            <Canvas x:Name="cvsshowChar18" Background="DarkGray" Height="85" VerticalAlignment="Top" Width="67"  />
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="3" Grid.Column="1" Margin="0,0,0,0">
+                        <Label Content="WaveFrom Profile" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="29" Margin="0,-4,0,0" VerticalAlignment="Top" Width="139" FontSize="14" Padding="0,5,0,0" Visibility="Collapsed"/>
+                        <TextBox x:Name="txtCurrProfile" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Margin="27,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64"  FontSize="18" Visibility="Collapsed"/>
+                        <Label Content="VIN : " HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="50" Margin="100,15,0,0" VerticalAlignment="Top" Width="150" FontSize="30"/>
+                        <TextBox x:Name="txtVIN" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="50" Margin="250,15,0,0" TextWrapping="Wrap" Text="ABCDEFGHIJKLMNOPQRS" VerticalAlignment="Top" Width="500" Background="#FF816565" FontSize="30" TextChanged="txtVIN_TextChanged"/>
+                        <Label x:Name="lblVINLength" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="50" Margin="770,15,0,0" VerticalAlignment="Top" Width="50" FontSize="30" FontWeight="Bold" Background="#FF958787"/>
+                    </Grid>
+                    <Grid Grid.Row="4" Grid.Column="1" Margin="0">
+                        <Button x:Name="btnServoOnOff" Content="SERVO ON"     HorizontalAlignment="Left" Height="30" Margin="20,5,0,0" VerticalAlignment="Top" Width="120" Click="btnServoOnOff_Click" FontSize="14"/>
+                        <Button x:Name="btnLaserInfo"  Content="LASER INFO"   HorizontalAlignment="Left" Height="30" Margin="20,45,0,0" VerticalAlignment="Top" Width="120" Click="btnLaserInfo_Click" FontSize="14"/>
+                        <Button x:Name="btnLaserReset" Content="RESET LASER" HorizontalAlignment="Left" Height="30" Margin="20,85,0,0" VerticalAlignment="Top" Width="120" Click="btnLaserReset_Click" FontSize="14"/>
+                        <Button x:Name="btnFirmware"   Content="FIRMWARE"     HorizontalAlignment="Left" Height="30" Margin="20,125,0,0" VerticalAlignment="Top" Width="120" FontSize="14" Click="btnFirmware_Click" />
+                        <!--<Button x:Name="btnFixDotMissing" Content="DOT MISSING" HorizontalAlignment="Left" Height="30" Margin="50,125,0,0" VerticalAlignment="Top" Width="120" FontSize="14" Click="btnFixDotMissing_Click"/>-->
+
+                        <Button x:Name="btnGoPark"      Content="GO PARKING" HorizontalAlignment="Left" Height="30" Margin="180,5,0,0"  VerticalAlignment="Top" Width="120" FontSize="14" Click="btnGoPark_Click" />
+                        <Button x:Name="btnCenterPoint" Content="GO CENTER" HorizontalAlignment="Left" Height="30" Margin="180,45,0,0" VerticalAlignment="Top" Width="120" FontSize="14" Click="btnCenterPoint_Click" Visibility="Collapsed"/>
+                        <Button x:Name="btnMarkPoint"   Content="MARK POSITION" HorizontalAlignment="Left" Height="30" Margin="180,45,0,0" VerticalAlignment="Top" Width="120" FontSize="14" Click="btnMarkPoint_Click" />
+                        <Button x:Name="btnGoHome"      Content="GO HOME"      HorizontalAlignment="Left" Height="30" Margin="180,85,0,0" VerticalAlignment="Top" Width="120" FontSize="14" Click="btnGoHome_Click" />
+
+                        <Button x:Name="btnReadFont"  Content="READ FONT"  HorizontalAlignment="Left" Height="30" Margin="340,5,0,0" VerticalAlignment="Top" Width="120" Click="btnReadFont_Click" FontSize="14"/>
+                        <Button x:Name="btnAreaCheck" Content="PLATE CHECK" HorizontalAlignment="Left" Height="30" Margin="340,45,0,0" VerticalAlignment="Top" Width="120" Click="btnAreaCheck_Click" FontSize="14"/>
+                        <CheckBox x:Name="ckbRepeatCheck" Content="CONTINOUS" HorizontalAlignment="Left" Height="15" Margin="405,75,0,0" VerticalAlignment="Top" Width="77" FontSize="10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Padding="0,0,0,0"/>
+                        <CheckBox x:Name="ckbErrHeight" Content="HEIGHT" HorizontalAlignment="Left" Height="15" Margin="340,75,0,0" VerticalAlignment="Top" Width="65" FontSize="10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Padding="0,0,0,0"/>
+                        <CheckBox x:Name="ckbErrCline" Content="SLOPE" HorizontalAlignment="Left" Height="15" Margin="340,90,0,0" VerticalAlignment="Top" Width="80" FontSize="10" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Padding="0,0,0,0"/>
+                        <TextBox x:Name="txtboxCheckRepeatCount" HorizontalAlignment="Left" Height="30" Margin="460,45,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="25" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Visibility="Collapsed"/>
+                        <!--<Button x:Name="btnCalculateData" Content="MAKE DATA" HorizontalAlignment="Left" Height="30" Margin="430,45,0,0" VerticalAlignment="Top" Width="120" Click="btnCalculateData_Click" FontSize="14"/>-->
+                        <!--<Button x:Name="btnMarkingConer" Content="MARKING CONER" HorizontalAlignment="Left" Height="30" Margin="430,125,0,0" VerticalAlignment="Top" Width="120" Click="btnMarkingConer_Click" FontSize="13"/>-->
+
+                        <Button x:Name="btnDryRun"  Content="DRY RUN"  HorizontalAlignment="Left" Height="30" Margin="500,5,0,0" VerticalAlignment="Top" Width="120" Click="btnDryRun_Click" FontSize="14" Visibility="Collapsed"/>
+                        <Button x:Name="btnMarkRun" Content="RUN MARKING" HorizontalAlignment="Left" Height="30" Margin="500,45,0,0" VerticalAlignment="Top" Width="120" Click="btnMarkRun_Click" FontSize="14" />
+                        <CheckBox x:Name="ckbSkipCheckPlane" Content="SKIP PLATE" HorizontalAlignment="Left" Height="15" Margin="500,75,0,0" VerticalAlignment="Top" Width="96" FontSize="10"/>
+                        <!--<CheckBox x:Name="ckbAging" Content="Aging Test" HorizontalAlignment="Left" Height="20" Margin="710,75,0,0" VerticalAlignment="Top" Width="85" FontSize="12"/>-->
+                        <TextBox x:Name="tbxRunRepeatCount" HorizontalAlignment="Left" Height="30" Margin="620,45,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="25" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+                        <Button x:Name="btnGoPoint" Content="GO TO BELOW" HorizontalAlignment="Left" Height="30" Margin="180,125,0,0" VerticalAlignment="Top" Width="120" Click="btnGoPoint_Click" FontSize="14"/>
+                        <TextBox x:Name="txtGoPoint_X" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Margin="150,155,0,0" VerticalAlignment="Top" Width="60"  FontSize="12"/>
+                        <TextBox x:Name="txtGoPoint_Y" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Margin="210,155,0,0" VerticalAlignment="Top" Width="60"  FontSize="12"/>
+                        <TextBox x:Name="txtGoPoint_Z" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Margin="270,155,0,0" VerticalAlignment="Top" Width="60"  FontSize="12"/>
+                        <Button x:Name="btnSetStartPoint" Content="GO CENTER" HorizontalAlignment="Left" Height="30" Margin="180,185,0,0" VerticalAlignment="Top" Width="120" Click="btnSetStartPoint_Click" FontSize="14"/>
+
+                        <Button x:Name="btnPINTest" Content="LASER ONE SPOT" HorizontalAlignment="Left" Height="30" Margin="500,5,0,0" VerticalAlignment="Top" Width="120" Click="btnPINTest_Click" FontSize="12"/>
+
+                        <Label x:Name="lblCommStatus"   Content="1"             HorizontalAlignment="Left" Height="30" Margin="851,237,0,0" VerticalAlignment="Top" Width="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2AEC17"/>
+                        <Button x:Name="btnAorOn"       Content="AIR ON"        HorizontalAlignment="Left" Height="30" Margin="340,125,0,0" VerticalAlignment="Top" Width="120" FontSize="14" Click="btnAirOn_Click"/>
+                        <Button x:Name="btnAirOff"      Content="AIR OFF"       HorizontalAlignment="Left" Height="30" Margin="340,165,0,0" VerticalAlignment="Top" Width="120" FontSize="14" Click="btnAirOff_Click" />
+                        <Button x:Name="btnAimingOn"    Content="AIMING ON"     HorizontalAlignment="Left" Height="30" Margin="500,125,0,0" VerticalAlignment="Top" Width="120" FontSize="14" Click="btnAimingOn_Click" />
+                        <Button x:Name="btnAimingOff"   Content="AIMING OFF"    HorizontalAlignment="Left" Height="30" Margin="500,165,0,0" VerticalAlignment="Top" Width="120" FontSize="14" Click="btnAimingOff_Click" />
+                        <Button x:Name="btnMarkCorner"  Content="MARK CORNER"   HorizontalAlignment="Left" Height="30" Margin="340,205,0,0" VerticalAlignment="Top" Width="120" FontSize="14" Click="btnMarkCorner_Click" />
+                    </Grid>
+                    <Grid Grid.Row="4" Grid.Column="2" >
+                        <StackPanel Orientation="Horizontal">
+                            <Label x:Name="AvgPowerLabel" Content="AVERAGE POWER" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="30" Width="120" FontSize="14" Padding="0"/>
+                            <TextBox x:Name="AvgPowerTxt" HorizontalAlignment="Left" Height="30" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="OFF" VerticalAlignment="Top" Width="100" FontSize="20" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" FontFamily="Yu Gothic UI Semibold"/>
+                            <Label Content="(Watts)" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="30" Width="60" FontSize="14" Padding="0"/>
+                            <Label HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="30" Width="20" FontSize="12" Padding="0"/>
+                            <Label x:Name="TemperatureLabel" Content="TEMPERATURE" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="30" Width="120" FontSize="16" VerticalContentAlignment="Center" Padding="0"/>
+                            <TextBox x:Name="TemperatureTxt" HorizontalAlignment="Left" Height="30" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="70" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" FontSize="16" FontFamily="Yu Gothic UI Semibold"/>
+                            <Label Content="(°C)" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Height="30" Width="80" FontSize="14" VerticalContentAlignment="Center" Padding="0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,40,0,0">
+                            <Label x:Name="PeakPowewrLabel" Content="MAX POWER" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="5,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="30" Width="120" FontSize="14" Padding="0"/>
+                            <TextBox x:Name="PeakPowerTxt" HorizontalAlignment="Left" Height="30" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="OFF" VerticalAlignment="Top" Width="100" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" FontSize="20" FontFamily="Yu Gothic UI Semibold"/>
+                            <Label Content="(Watts)" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="30" Width="60" FontSize="14" Padding="0"/>
+                            <Label HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="30" Width="20" FontSize="12" Padding="0"/>
+                            <Label x:Name="LaserErrorLabel" Content="LASER STATUS" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="120" FontSize="16" Height="30" Padding="0"/>
+                            <TextBox x:Name="LaserErrorTxt" HorizontalAlignment="Left" HorizontalContentAlignment="Center" TextAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="Error Code" Height="30" Width="145" FontSize="16" BorderBrush="#FFF5143D" BorderThickness="0,0,2,2" Foreground="Black" Background="#FFB4B4B4" VerticalAlignment="Top" MouseDoubleClick="LaserErrorTxt_MouseDoubleClick"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,80,0,0">
+                            <Label Content="MARKING POSITION" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,0,0,0" Width="150" Height="30" FontSize="14"/>
+                            <RadioButton x:Name="rbtMarkingPos1" GroupName="MarkingPos" Content="SEAT CROSS" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Padding="0" Height="30" Width="150" IsChecked="True" FontSize="14" />
+                            <RadioButton x:Name="rbtMarkingPos2" GroupName="MarkingPos" Content="APRON" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" Padding="0" Height="30" Width="150" FontSize="14"/>
+                        </StackPanel>
+
+                        <GroupBox x:Name="groupBox" Header="MOTOR CONTROLL" HorizontalAlignment="Left" HorizontalContentAlignment="Center"  Height="160" Margin="10,120,0,0" VerticalAlignment="Top" Width="607" FontSize="16" BorderBrush="Black" VerticalContentAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" Margin="12,152,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <StackPanel Orientation="Vertical" Height="120">
+                                <Label Content="DISTANCE" HorizontalAlignment="Left" Height="25" Margin="20,0,0,0" VerticalAlignment="Top" Width="120" FontSize="14" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontWeight="Bold" Padding="0"/>
+                                <RadioButton x:Name="rbt01mm" GroupName="XYAxis" Content=" 0.1mm" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="20,0,0,0" VerticalAlignment="Top" Padding="0" FontSize="14" Height="20" Width="70" />
+                                <RadioButton x:Name="rbt10mm" GroupName="XYAxis" Content="   1mm" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="20,0,0,0" VerticalAlignment="Top" Padding="0" FontSize="14" Height="20" Width="70" IsChecked="True"/>
+                                <RadioButton x:Name="rbt20mm" GroupName="XYAxis" Content="   2mm" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="20,0,0,0" VerticalAlignment="Top" Padding="0" FontSize="14" Height="20" Width="70" />
+                                <RadioButton x:Name="rbt30mm" GroupName="XYAxis" Content="   3mm" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="20,0,0,0" VerticalAlignment="Top" Padding="0" FontSize="14" Height="20" Width="70" />
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Height="120">
+                                <Label Content="CURRENT POSITION" HorizontalAlignment="Left" Height="25" Width="138" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Padding="0"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="X" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" Width="30" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Padding="0"/>
+                                    <TextBox x:Name="txtCurrentPosX" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Background="#FFD1BCBC"/>
+                                    <Label Content="(mm)" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" Width="40" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Padding="0" RenderTransformOrigin="0.593,-0.487"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Y" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" Width="30" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Padding="0"/>
+                                    <TextBox x:Name="txtCurrentPosY" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Background="#FFD1BCBC" />
+                                    <Label Content="(mm)" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" Width="40" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Padding="0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Z" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" Width="30" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Padding="0"/>
+                                    <TextBox x:Name="txtCurrentPosZ" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Background="#FFD1BCBC" />
+                                    <Label Content="(mm)" HorizontalAlignment="Left" Height="25" Margin="5,0,0,0" VerticalAlignment="Top" Width="40" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Padding="0"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <Label Width="30"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="btnMoveYMinus" Content="Y-" HorizontalAlignment="Left" Height="40"  VerticalAlignment="Center" Width="30" FontSize="16" FontWeight="Bold" Click="btnMoveYMinus_Click"/>
+                                <StackPanel Orientation="Vertical">
+                                    <Button x:Name="btnMoveXMinus" Content="X-" HorizontalAlignment="Center" Height="40"  VerticalAlignment="Top" Width="30" FontSize="16" FontWeight="Bold" Click="btnMoveXMinus_Click"/>
+                                    <Image x:Name="imgBody" HorizontalAlignment="Left" Height="40"  VerticalAlignment="Top" Width="80" Source="Image/BodyReverse.jpg" />
+                                    <Button x:Name="btnMoveXPlus" Content="X+" HorizontalAlignment="Center" Height="40"  VerticalAlignment="Top" Width="30" FontSize="16" FontWeight="Bold" Click="btnMoveXPlus_Click"/>
+                                </StackPanel>
+                                <Button x:Name="btnMoveYPlus" Content="Y+" HorizontalAlignment="Left" Height="40"  VerticalAlignment="Center" Width="30" FontSize="16" FontWeight="Bold" Click="btnMoveYPlus_Click"/>
+                            </StackPanel>
+                            <Label Width="30"/>
+                            <StackPanel Orientation="Vertical">
+                                <Label Content="" HorizontalAlignment="Center" Height="16" Width="30"/>
+                                <Image x:Name="imgHead" VerticalAlignment="Top" Height="90"  Width="48" Source="/Image/MarkingHead.png" />
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical">
+                                <Button x:Name="btnMoveZPlus" Content="Z+" HorizontalAlignment="Center" Height="40"  VerticalAlignment="Top" Width="30" FontSize="16" FontWeight="Bold" Click="btnMoveZPlus_Click"/>
+                                <Label HorizontalAlignment="Left" Height="40"  Width="30"  />
+                                <Button x:Name="btnMoveZMinus" Content="Z-" HorizontalAlignment="Center" Height="40"  VerticalAlignment="Top" Width="30" FontSize="16" FontWeight="Bold" Click="btnMoveZMinus_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+
+
+
+                    </Grid>
+                    <Grid Grid.Row="3" Grid.Column="2"  >
+                        <StackPanel Orientation="Vertical" Margin="0,0,0,0" Width="270" HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox x:Name="EmissionAuto" Content="  LASER ON/OFF" HorizontalAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Top" Height="25" Width="135" Padding="0" FontSize="12"/>
+                                <Label HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="25" VerticalAlignment="Top" Width="10" FontSize="14" Padding="0"/>
+                                <Rectangle x:Name="EmissionLamp" HorizontalAlignment="Left" Height="25" Stroke="Black" VerticalAlignment="Top" Width="25" StrokeThickness="1" />
+                                <Label HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="25" VerticalAlignment="Top" Width="5" FontSize="14" Padding="0"/>
+                                <Label Content="LASER STATUS" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" FontSize="12" Padding="0" Height="25" VerticalContentAlignment="Center"/>
+                            </StackPanel>
+                            <Label HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="5" VerticalAlignment="Top" Width="270" FontSize="14" Padding="0,0,0,0"/>
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox x:Name="CleaningBox" Content=" CLEANING ON/OFF" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="12" Width="135" Height="25"/>
+                                <Label HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="25" VerticalAlignment="Top" Width="10" FontSize="14" Padding="0,0,0,0"/>
+                                <Rectangle x:Name="AimingLamp" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="25" Stroke="Red" StrokeThickness="1" VerticalAlignment="Top" Width="25"/>
+                                <Label HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="20" VerticalAlignment="Top" Width="5" FontSize="14" Padding="0,0,0,0"/>
+                                <Label x:Name="AimingLabel" Content="AIMING STATUS" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" FontSize="12" Padding="0" Height="25" VerticalContentAlignment="Center"/>
+                            </StackPanel>
+                            <CheckBox x:Name="AirOnOff" Content=" AIR ON/OFF" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="12" Width="125" Height="25" IsChecked="True"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" Margin="300,0,0,0">
+                            <Label Content="MOTOR ALARM" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="20" Width="90" FontSize="14" VerticalContentAlignment="Top" Padding="0" Foreground="Red"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label x:Name="lblMotorAlramX" Content="X" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="40" Width="40" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="1"/>
+                                <Label x:Name="lblMotorAlramY" Content="Y" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="40" Width="40" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="1"/>
+                                <Label x:Name="lblMotorAlramZ" Content="Z" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="40" Width="40" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="1"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="450,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="70">
+                            <Label Content="MOTOR HOME" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="20" Width="90" FontSize="14" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Padding="0" Margin="0,0,0,0"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="40">
+                                <Label x:Name="lblMotorHomeXY" Content="XY" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="40" Width="40" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="1"/>
+                                <Label x:Name="lblMotorHomeZ" Content="Z" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="40" Width="40" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="1"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <Label x:Name="lblInputPort" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="30" Margin="560,20,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="84" BorderBrush="Black" BorderThickness="0.5"/>
+                    </Grid>
+
+                    <Grid Grid.Row="5" Grid.Column="1" Visibility="Collapsed" Margin="0,0,0,0">
+                        <GroupBox x:Name="groupBoxZ" Header="SCAN Axis Controll" HorizontalAlignment="Left" HorizontalContentAlignment="Center"  Height="160"  VerticalAlignment="Top" Width="434" FontSize="16" BorderBrush="Black" VerticalContentAlignment="Center"/>
+                        <Label Content="Moving Length" HorizontalAlignment="Left" Height="25" Margin="6,24,0,0" VerticalAlignment="Top" Width="110" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Padding="0"/>
+                        <RadioButton x:Name="rbt0001mmZ" GroupName="ZAxis" Content=" 0.01mm" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="16,49,0,0" VerticalAlignment="Top" Padding="0" FontSize="14" Height="20" Width="75" IsChecked="True"/>
+                        <RadioButton x:Name="rbt0010mmZ" GroupName="ZAxis" Content=" 0.1mm" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="16,69,0,0" VerticalAlignment="Top" Padding="0" FontSize="14" Height="20" Width="75" />
+                        <RadioButton x:Name="rbt0100mmZ" GroupName="ZAxis" Content=" 1mm" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="16,89,0,0" VerticalAlignment="Top" Padding="0" FontSize="14" Height="20" Width="75" />
+
+                        <Button x:Name="btnMoveScanHome" Content="HOME(SCAN)" HorizontalAlignment="Left" Height="30" Margin="316,36,0,0" VerticalAlignment="Top" Width="98" FontSize="14" FontWeight="Bold" Click="btnMoveScanHome_Click"/>
+                        <Button x:Name="btnMoveScanMinus" Content="-" HorizontalAlignment="Left" Height="40" Margin="181,20,0,0" VerticalAlignment="Top" Width="80" FontSize="16" FontWeight="Bold" Click="btnMoveScanMinus_Click"/>
+                        <Button x:Name="btnMoveScanPlus" Content="+" HorizontalAlignment="Left" Height="40" Margin="181,100,0,0" VerticalAlignment="Top" Width="80" FontSize="16" FontWeight="Bold" Click="btnMoveScanPlus_Click"/>
+                        <Image x:Name="imgBodyScan" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Margin="181,60,0,0" Width="80" Source="/Body.jfif" />
+
+                        <Label Content="Current Position" HorizontalAlignment="Left" Height="28" Margin="311,83,0,0" VerticalAlignment="Top" Width="122" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+
+                        <TextBox x:Name="txtCurrentPosScan" HorizontalAlignment="Left" Height="25" Margin="311,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" Background="#FFD1BCBC" />
+                        <Label Content="(mm)" HorizontalAlignment="Left" Height="25" Margin="371,111,0,0" VerticalAlignment="Top" Width="50" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Padding="0"/>
+                    </Grid>
+                    <Grid Grid.Row="5" Grid.Column="2">
+                        <Button x:Name="btnGetLinkStatus" Content="LINK STATUS" HorizontalAlignment="Left" Height="30" Margin="20,5,0,0" VerticalAlignment="Top" Width="120" FontSize="14" Click="btnGetLinkStatus_Click"/>
+                        <Button x:Name="btnVisionLinkPoint" Content="GO LINK" HorizontalAlignment="Left" Height="30" Margin="230,5,0,0" VerticalAlignment="Top" Width="120" Click="btnVisionLinkPoint_Click" FontSize="14"/>
+                        <Button x:Name="btnSetLinkOn" Content="LINK ON" HorizontalAlignment="Left" Height="30" Margin="20,45,0,0" VerticalAlignment="Top" Width="120" FontSize="14" Click="btnSetLinkOn_Click"/>
+                        <Button x:Name="btnSetLinkOff" Content="LINK OFF" HorizontalAlignment="Left" Height="30" Margin="230,45,0,0" VerticalAlignment="Top" Width="120" FontSize="14" Click="btnSetLinkOff_Click"/>
+                        <Button x:Name="btnVisionStartPoint" Content="GO VISION START" HorizontalAlignment="Left" Height="30" Margin="20,85,0,0" VerticalAlignment="Top" Width="120" Click="btnVisionStartPoint_Click" FontSize="12"/>
+                        <CheckBox x:Name="chbReverseScan" Content="REVERSE" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="140,85,0,0"  VerticalAlignment="Top" Height="30" Width="69" Padding="0" FontSize="12"/>
+                        <Button x:Name="btnVisionStartScan" Content="START SCAN" HorizontalAlignment="Left" Height="30" Margin="230,85,0,0" VerticalAlignment="Top" Width="120" Click="btnVisionStartScan_Click" FontSize="14"/>
+                        <Button x:Name="btnVision11" Content="READY" HorizontalAlignment="Left" Height="30" Margin="420,5,0,0" VerticalAlignment="Top" Width="100" Click="btnVision11_Click" FontSize="14"/>
+                        <Button x:Name="btnVision12" Content="EXECUTE" HorizontalAlignment="Left" Height="30" Margin="530,5,0,0" VerticalAlignment="Top" Width="100" Click="btnVision12_Click" FontSize="14"/>
+                        <Button x:Name="btnVision21" Content="2차비전준비" HorizontalAlignment="Left" Height="30" Margin="420,45,0,0" VerticalAlignment="Top" Width="100" Click="btnVision21_Click" FontSize="14" Visibility="Collapsed"/>
+                        <Button x:Name="btnVision22" Content="2차비전실행" HorizontalAlignment="Left" Height="30" Margin="530,45,0,0" VerticalAlignment="Top" Width="100" Click="btnVision22_Click" FontSize="14" Visibility="Collapsed"/>
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="패턴 데이터" FontSize="18" FontWeight="Bold" Width="170" Height="40" Margin="5,0,0,0">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FF0F4AD3" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="428*"/>
+                        <ColumnDefinition Width="355*"/>
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="55*"/>
+                        <RowDefinition Height="250*"/>
+                        <RowDefinition Height="260*"/>
+                        <RowDefinition Height="70*"/>
+                        <RowDefinition Height="190*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="1" Grid.Column="1" >
+                        <GroupBox x:Name="groupBox1" Header="마킹설정" HorizontalAlignment="Left" VerticalAlignment="Top" Width="828" BorderBrush="Black" BorderThickness="1" Height="245" >
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="814" >
+                                <StackPanel Orientation="Vertical"  VerticalAlignment="Top" Width="270" Height="185" Background="Bisque">
+                                    <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="270">
+                                        <Label Content="FONT 이름 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <ComboBox x:Name="cbxFontName" Height="26" HorizontalAlignment="Right" Margin="0,2,0,0" VerticalAlignment="Top" Width="100" SelectedIndex="0" FontSize="14" />
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="270">
+                                        <Label Content="글자 피치 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <TextBox x:Name="txtPitch" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"  FontSize="14"/>
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300">
+                                        <Label Content="글자높이 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <TextBox x:Name="txtHeight" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"  FontSize="14"/>
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270">
+                                        <Label Content="글자폭 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <TextBox x:Name="txtWidth" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"  FontSize="14"/>
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270">
+                                        <Label Content="글자 각도 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <TextBox x:Name="txtAngle" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"  FontSize="14"/>
+                                        <Label Content="(deg)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical"  VerticalAlignment="Top" Width="270" Background="Beige" Height="185">
+                                    <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="270">
+                                        <Label Content="마킹 센터 X 좌표 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14" />
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <TextBox x:Name="txtCenter_X" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"  FontSize="14"/>
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270">
+                                        <Label Content="마킹 센터 Y 좌표 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <TextBox x:Name="txtCenter_Y" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"  FontSize="14"/>
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270">
+                                        <Label Content="마킹 센터 Z 좌표 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <TextBox x:Name="txtCenter_Z" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"  FontSize="14"/>
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270" >
+                                        <Label Content="평면 측정 높이 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <TextBox x:Name="txtCheckHeight" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14" />
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270" Visibility="Collapsed">
+                                        <Label Content="영역 표시 높이 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <TextBox x:Name="txtAreaPosition" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14" />
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Width="270" Height="185" Visibility="Visible">
+                                    <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="270">
+                                        <Label Content="비전 시작 위치 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <TextBox x:Name="txtVisionStartPos" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"  FontSize="14"/>
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="290">
+                                        <Label Content="비전 스캔 길이 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <TextBox x:Name="txtVisionScanLength" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14"/>
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270" Visibility="Collapsed">
+                                        <Label Content="PARKING POSITION :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <TextBox x:Name="txtVisionParkPos" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" VerticalAlignment="Top" Width="60" FontSize="14"/>
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270" Visibility="Collapsed">
+                                        <Label Content="HOME POSITION :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <TextBox x:Name="txtVisionHomePos" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14" />
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270">
+                                        <Label Content="LINK 위치 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14" />
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <TextBox x:Name="txtVisionLinkPos" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14" />
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270" Visibility="Collapsed">
+                                        <Label Content="MAX LENGTH :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <Label x:Name="lblVisionMaxLength" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="60" Background="#FF99B4D1" FontSize="14"/>
+                                        <!--<TextBox x:Name="txtP_Z9" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14" />-->
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="55" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270" Visibility="Collapsed">
+                                        <Label Content="STEP 길이 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="170" FontSize="14"/>
+                                        <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                        <Label x:Name="lblVisionStepLength" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Margin="0,2,0,0" VerticalAlignment="Top" Width="60" Background="#FF99B4D1" FontSize="14"/>
+                                        <!--<TextBox x:Name="txtVisionStepLength" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"  FontSize="14"/>-->
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="55" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="270">
+                                        <Label Content="비전 방향 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14" />
+                                        <!--<Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,2,0,0" VerticalAlignment="Top" Width="5"/>-->
+                                        <RadioButton x:Name="rdbtnVisionLeft" GroupName="VISIONDIRECTION" Content="왼쪽" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="50" Height="30" FontSize="12"/>
+                                        <RadioButton x:Name="rdbtnVisionRight" GroupName="VISIONDIRECTION" Content="오른쪽" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="60" Height="30" FontSize="12"/>
+                                        <!--<TextBox x:Name="txtVisionDirection" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14" />
+                                        <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,2,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>-->
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                    </Grid>
+                    <Grid Grid.Row="1" Grid.Column="2" >
+                        <GroupBox Header="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="705" Height="245" BorderBrush="Black" BorderThickness="1" />
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,15,0,0" Width="360" Height="225">
+                            <StackPanel Orientation="Horizontal" Height="25">
+                                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="140" FontWeight="Normal" FontSize="14"/>
+                                <Label Content="X 좌표" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25" FontSize="14" Padding="0" FontWeight="Bold"/>
+                                <Label Content="" Width="2" FontWeight="Normal" FontSize="14"/>
+                                <Label Content="Y 좌표" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25" FontSize="14" Padding="0"/>
+                                <Label Content="" Width="2" FontWeight="Normal" FontSize="14"/>
+                                <Label Content="Z 좌표" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25" FontSize="14" Padding="0" FontWeight="Bold"/>
+                            </StackPanel>
+                            <!--<Label Content="" Height="2" FontWeight="Normal" FontSize="14"/>-->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30">
+                                <Label Content="파킹 좌표" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="140" FontWeight="Bold" FontSize="14"/>
+                                <TextBox Text="" x:Name="txtPark_X" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="26"/>
+                                <Label Content="" Width="2" FontWeight="Normal" FontSize="14"/>
+                                <TextBox Text="" x:Name="txtPark_Y" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="26"/>
+                                <Label Content="" Width="2" FontWeight="Normal" FontSize="14"/>
+                                <TextBox x:Name="txtPark_Z" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="26"/>
+                            </StackPanel>
+                            <!--<Label Content="" Height="2" FontWeight="Normal" FontSize="14"/>-->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30">
+                                <Label Content="마킹 이동 속도" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="140" FontWeight="Bold" FontSize="14"/>
+                                <TextBox Text="" x:Name="txtHome_X" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="26"/>
+                                <Label Content="" Width="2" FontWeight="Normal" FontSize="14"/>
+                                <TextBox Text="" x:Name="txtHome_Y" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="26"/>
+                                <Label Content="" Width="2" FontWeight="Normal" FontSize="14"/>
+                                <TextBox Text="" x:Name="txtHome_Z" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="26"/>
+                            </StackPanel>
+                            <!--<Label Content="" Height="2" FontWeight="Normal" FontSize="14"/>-->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="30">
+                                <Label Content="최대 마킹 길이" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="140" FontWeight="Bold" FontSize="14" />
+                                <Label x:Name="lblMAX_X" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" VerticalAlignment="Top" Width="70" Background="#FF99B4D1" FontSize="14" BorderBrush="Black" BorderThickness="1" Padding="0"/>
+                                <Label Content="" Width="2" FontWeight="Normal" FontSize="14"/>
+                                <Label x:Name="lblMAX_Y" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" VerticalAlignment="Top" Width="70" Background="#FF99B4D1" FontSize="14" BorderBrush="Black" BorderThickness="1" Padding="0"/>
+                                <Label Content="" Width="2" FontWeight="Normal" FontSize="14"/>
+                                <Label x:Name="lblMAX_Z" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" VerticalAlignment="Top" Width="70" Background="#FF99B4D1" FontSize="14" BorderBrush="Black" BorderThickness="1" Padding="0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="290" Visibility="Collapsed">
+                                <Label Content="거리 센서 위치 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,2,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,2,0,0" VerticalAlignment="Top" Width="5"/>
+                                <RadioButton x:Name="rdbtnSensorPosLeft" GroupName="SNSPOS" Content="왼쪽" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="50" Height="34" FontSize="12"/>
+                                <RadioButton x:Name="rdbtnSensorPosRight" GroupName="SNSPOS" Content="오른쪽" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="60" Height="34" FontSize="12"/>
+                            </StackPanel>
+                            <!--<Label Content="" Height="2" FontWeight="Normal" FontSize="14"/>-->
+                            <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="290">
+                                <Label Content="스패터 방향 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,2,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,2,0,0" VerticalAlignment="Top" Width="5"/>
+                                <RadioButton x:Name="rdbtnSpatterPosUp" GroupName="SPATTERPOS" Content="위" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="50" Height="34" FontSize="12"/>
+                                <RadioButton x:Name="rdbtnSpatterPosDown" GroupName="SPATTERPOS" Content="아래" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="60" Height="34" FontSize="12"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="290">
+                                <Label Content="모터 대기 시간 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="140" FontSize="14"/>
+                                <!--<Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,2,0,0" VerticalAlignment="Top" Width="5"/>-->
+                                <TextBox x:Name="txtMarkDelayTime1" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" FontSize="14" />
+                                <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,2,0,0" VerticalAlignment="Top" Width="1"/>
+                                <TextBox x:Name="txtMarkDelayTime2" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" FontSize="14" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="290">
+                                <Label Content="거리센서 각도 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="140" FontSize="14"/>
+                                <!--<Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>-->
+                                <TextBox x:Name="txtSensorAngle" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" FontSize="14" />
+                                <Label Content="(deg)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="14"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="370,15,0,0" Width="325" Height="166" >
+                            <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="290" Visibility="Collapsed">
+                                <Label Content="Thickness :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="160" FontSize="14"/>
+                                <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                <TextBox x:Name="txtThickness" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"  FontSize="14"/>
+                                <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="0" FontSize="16"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="30" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="290">
+                                <Label Content="SETP 길이 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                <Label x:Name="lblStepLength" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" VerticalAlignment="Top" Width="60" Background="#FF99B4D1" FontSize="14"/>
+                                <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="290">
+                                <Label Content="RASTER 시작 위치 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                <TextBox x:Name="txtRasterStartPoint" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14" />
+                                <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="14"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="290">
+                                <Label Content="RASTER 종료 위치 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                <TextBox x:Name="txtRasterEndPoint" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14" />
+                                <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="14"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="290">
+                                <Label Content="DENSITY :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                <TextBox x:Name="txtDensity" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14" />
+                                <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="0" FontSize="16"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="290">
+                                <Label Content="영점 높이 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="140" FontSize="14"/>
+                                <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                <TextBox x:Name="txtDistance0Pos" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14" />
+                                <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="14"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <Button x:Name="btnSaveHeaderValue" Content="HEAD 저장" Height="35" Width="120" FontSize="14" FontWeight="Bold" Click="btnSaveHeaderValue_Click" Margin="560,190,0,0"/>
+                    </Grid>
+
+                    <Grid Grid.Row="2" Grid.Column="1">
+                        <GroupBox x:Name="groupBoxSpeed" Header="속도" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="1"  Width="470" Height="190">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-5,0,0" Width="460">
+                                <StackPanel Orientation="Horizontal" Height="18">
+                                    <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="140" FontWeight="Normal" FontSize="14"/>
+                                    <Label Content="시작속도" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="20" FontSize="12" Padding="0" FontWeight="Bold"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <Label Content="목표속도" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="20" FontSize="12" Padding="0"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <Label Content="가속속도" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="20" FontSize="12" Padding="0" FontWeight="Bold"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <Label Content="감속속도" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="20" FontSize="12" Padding="0"/>
+                                    <!--<Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="80"/>-->
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Label Content="HOME 이동 속도" x:Name="lblSpeedHomeSpeedLabel" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="140" FontWeight="Bold" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedHomeInitialValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedHomeTargetValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedHomeAccelValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedHomeDecelValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <!--<Label Content="" x:Name="lblSpeedHomeSpeedRange" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="80"/>-->
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Label Content="빠른 이동 속도" x:Name="lblSpeedFastSpeedLabel" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="140" FontWeight="Bold" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedFastInitialValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedFastTargetValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedFastAccelValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedFastDecelValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <!--<Label Content="" x:Name="lblSpeedFastSpeedValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="28" BorderBrush="Black" BorderThickness="0.5"/>-->
+                                    <!--<Label Content="" x:Name="lblSpeedFastSpeedRange" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="80"/>-->
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Label Content="마킹 이동 속도" x:Name="lblSpeedMarkSpeedLabel" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="140" FontWeight="Bold" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedMarkInitialValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedMarkTargetValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedMarkAccelValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedMarkDecelValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <!--<Label Content="" x:Name="lblSpeedMarkSpeedValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="28" BorderBrush="Black" BorderThickness="0.5"/>-->
+                                    <!--<Label Content="" x:Name="lblSpeedMarkSpeedRange" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="80"/>-->
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Label Content="평면 측정 속도" x:Name="lblSpeedMessureSpeedLabel" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="140" FontWeight="Bold" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedMeasureInitialValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedMeasureTargetValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedMeasureAccelValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedMeasureDecelValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <!--<Label Content="" x:Name="lblSpeedMeasureSpeedValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="28" BorderBrush="Black" BorderThickness="0.5"/>-->
+                                    <!--<Label Content="" x:Name="lblSpeedMeasureSpeedRange" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="80"/>-->
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Label Content="비전 측정 속도" x:Name="lblSpeedScanSpeedLabel" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="140" FontSize="14" FontWeight="Bold"/>
+                                    <TextBox Text="" x:Name="txbSpeedScanInitialValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedScanTargetValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedScanAccelValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedScanDecelValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <!--<Label Content="" x:Name="lblSpeedScanSpeedValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="28" BorderBrush="Black" BorderThickness="0.5"/>-->
+                                    <!--<Label Content="" x:Name="lblSpeedScanSpeedRange" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="80"/>-->
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Visibility="Collapsed">
+                                    <Label Content="SCAN FAST SPEED" x:Name="lblSpeedScanFastSpeedLabel" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="140" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedScanFastInitialValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedScanFastTargetValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedScanFastAccelValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <Label Content="" Width="10" FontWeight="Normal" FontSize="14"/>
+                                    <TextBox Text="" x:Name="txbSpeedScanFastDecelValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="25"/>
+                                    <!--<Label Content="" x:Name="lblSpeedScanFastSpeedValue" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" Height="28" BorderBrush="Black" BorderThickness="0.5"/>-->
+                                    <!--<Label Content="" x:Name="lblSpeedScanFastSpeedRange" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="80"/>-->
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox x:Name="groupBoxSolenoid" Header="SOLENOID" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="1" Margin="470,0,0,0" Height="190" Width="198">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="SOL ON TIME" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="30" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="90" FontSize="12"  />
+                                    <TextBox x:Name="txtSolOnTime" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="26"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="55" Margin="0,2,0,0"/>
+                                    <Label Content="" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" VerticalContentAlignment="Center" Width="5" FontWeight="Bold" Padding="0,0,0,0" FontSize="12"/>
+                                    <Label Content="(ms)" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" VerticalContentAlignment="Center" Width="30" FontWeight="Bold" Padding="0,0,0,0" FontSize="12"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="SOL OFF TIME" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="30"  VerticalAlignment="Top" VerticalContentAlignment="Center" Width="90" FontSize="12" />
+                                    <TextBox x:Name="txtSolOffTime" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="26"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="55" Margin="0,2,0,0"/>
+                                    <Label Content="" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" VerticalContentAlignment="Center" Width="5" FontWeight="Bold" Padding="0,0,0,0" FontSize="12"/>
+                                    <Label Content="(ms)" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" VerticalContentAlignment="Center" Width="30" FontWeight="Bold" Padding="0,0,0,0" FontSize="12"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                                    <Label Content="DWELL TIME" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="30"  VerticalAlignment="Top" VerticalContentAlignment="Center" Width="90" FontSize="12" />
+                                    <TextBox x:Name="txtDWellTime" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="30"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="55"/>
+                                    <Label Content="" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" VerticalContentAlignment="Center" Width="5" FontWeight="Bold" Padding="0,0,0,0" FontSize="12"/>
+                                    <Label Content="(ms)" HorizontalAlignment="Left" Height="30"  VerticalAlignment="Top" VerticalContentAlignment="Center" Width="30" FontWeight="Bold" Padding="0,0,0,0" FontSize="12"/>
+                                </StackPanel>
+                                <!--<StackPanel Orientation="Horizontal">
+                                    <Label Content="SOLENOID" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Height="35" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="124" FontSize="18"  FontWeight="Bold" />
+                                </StackPanel>-->
+                            </StackPanel>
+                        </GroupBox>
+                    </Grid>
+
+                    <Grid Grid.Row="2" Grid.Column="2" >
+                        <GroupBox x:Name="groupBoxLaser" Header="LASER" HorizontalAlignment="Left" VerticalAlignment="Top" Width="705" BorderBrush="Black" BorderThickness="1" Height="260"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,21,0,0" Width="695" Height="235">
+                            <StackPanel Orientation="Vertical"  VerticalAlignment="Top" Width="295" Height="235" Background="AliceBlue">
+                                <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="295">
+                                    <Label Content="마킹 프로파일 No :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="170" FontSize="14"/>
+                                    <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                    <TextBox x:Name="txtProfileNum" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14" />
+                                    <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="295">
+                                    <Label Content="클리닝 사용 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="170" FontSize="14"/>
+                                    <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                    <CheckBox x:Name="chkboxuseCleaning" Content="사용" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="14" Width="125" Height="30"/>
+                                    <!--<RadioButton x:Name="rdbtnUseCleaningYes" GroupName="USECLEAN" Content="YES" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="60" Height="34" FontSize="14"/>
+                                    <RadioButton x:Name="rdbtnUseCleaningNo" GroupName="USECLEAN" Content="NO" HorizontalContentAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="60" Height="34" FontSize="14"/>-->
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="295">
+                                    <Label Content="클리닝 프로파일 No :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="170" FontSize="14"/>
+                                    <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                    <TextBox x:Name="txtCleanProfileNum" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14" />
+                                    <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="295">
+                                    <Label Content="클리닝 좌표 :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="170" FontSize="14"/>
+                                    <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                    <TextBox x:Name="txtCleanPosition" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14" />
+                                    <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="14"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="30"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="295">
+                                    <Label Content="CLEAN DELTA :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="170" FontSize="14" />
+                                    <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                    <TextBox x:Name="txtCleanDelta" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"  FontSize="14"/>
+                                    <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="14"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Width="295" Visibility="Collapsed" >
+                                    <Label Content="OP MODE :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="170" FontSize="14"/>
+                                    <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="5"/>
+                                    <TextBox x:Name="txtOpmode" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="26" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="14" />
+                                    <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                </StackPanel>
+
+
+                                <!--<StackPanel Orientation="Horizontal" Height="34" Margin="0,2,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="320">
+                                    <Label Content="START POSITION X :" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="30" Margin="0,2,0,0" VerticalAlignment="Top" Width="170" FontSize="14" />
+                                    <Label Content="" HorizontalAlignment="Left" Height="30" Margin="0,2,0,0" VerticalAlignment="Top" Width="5"/>
+                                    <TextBox x:Name="txtStart_X2" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="30" Margin="0,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"  FontSize="14"/>
+                                    <Label Content="(mm)" HorizontalAlignment="Left" Height="30" Margin="0,2,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="60" FontWeight="Bold" Padding="5,0,0,0" FontSize="16"/>
+                                </StackPanel>-->
+                            </StackPanel>
+                        </StackPanel>
+                        <!--<Button x:Name="btnSaveLaserValue" Content="HEAD 저장" Height="35" Width="120" FontSize="14" FontWeight="Bold" Click="btnSaveLaserValue_Click" Margin="560,210,0,0"/>-->
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <!--<TabItem Header="SPEED" FontSize="18" FontWeight="Bold" Width="150" Height="40" Margin="5,0,0,0">
+                    <TabItem.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                            <GradientStop Color="#FF0F4AD3" Offset="1"/>
+                        </LinearGradientBrush>
+                    </TabItem.Background>
+                    <Grid>
+                        <TabControl x:Name="Tb_SpeedControl2" HorizontalAlignment="Left" Height="460" Margin="100,80,0,0" VerticalAlignment="Top" Width="902" FontSize="16">
+                            <TabItem x:Name="tab_NoLoad2" Header="HOME" Width="200" Height="30" HorizontalAlignment="Left" >
+                                <TabItem.Background>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                                        <GradientStop Color="#FF1581DA" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </TabItem.Background>
+                                <StackPanel Orientation="Vertical" >
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="760" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="INITIAL SPEED"/>
+                                        <Label HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="(1~200)"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ScrollBar x:Name="Nload_Ispeed2" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" Margin="5,0,0,0" VerticalAlignment="Top" Width="745" RenderTransformOrigin="0.5,0.5" Background="#FFCF5814" Scroll="Nload_Ispeed_Scroll" SmallChange="1" LargeChange="10" Maximum="200" Minimum="1" Value="30"/>
+                                        <Label HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="20" FontSize="16" RenderTransformOrigin="4.429,0.471" />
+                                        <TextBox x:Name="Nload_value_Ispeed2" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="45"  TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="16" Text="{Binding Value, ElementName=Nload_Ispeed}" RenderTransformOrigin="4.429,0.471"/>
+                                    </StackPanel>
+                                    <Label HorizontalAlignment="Left" Height="5" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="745" FontSize="16" RenderTransformOrigin="4.429,0.471" Content=""/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="760" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="TARGET SPEED"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ScrollBar x:Name="Nload_Tspeed2" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" Margin="5,0,0,0" VerticalAlignment="Top" Width="745" RenderTransformOrigin="0.5,0.5" Background="#FFB01818" Scroll="Nload_Ispeed_Scroll" SmallChange="1" LargeChange="10" Maximum="200" Minimum="1" Value="30"/>
+                                        <Label HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="20" FontSize="16" RenderTransformOrigin="4.429,0.471" />
+                                        <TextBox x:Name="Nload_value_Tspeed2" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="45"  TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="16" Text="{Binding Value, ElementName=Nload_Tspeed}" RenderTransformOrigin="4.429,0.471"/>
+                                    </StackPanel>
+                                    <Label HorizontalAlignment="Left" Height="5" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="745" FontSize="16" RenderTransformOrigin="4.429,0.471" Content=""/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="760" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="ACCELERATION"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ScrollBar x:Name="Nload_Accel2" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" Margin="5,0,0,0" VerticalAlignment="Top" Width="745" RenderTransformOrigin="0.5,0.5" Background="#FF1AB93E" Scroll="Nload_Ispeed_Scroll" SmallChange="1" LargeChange="10" Maximum="200" Minimum="1" Value="30"/>
+                                        <Label HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="20" FontSize="16" RenderTransformOrigin="4.429,0.471" />
+                                        <TextBox x:Name="Nload_value_Accel2" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="45"  TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="16" Text="{Binding Value, ElementName=Nload_Accel}" RenderTransformOrigin="4.429,0.471"/>
+                                    </StackPanel>
+                                    <Label HorizontalAlignment="Left" Height="5" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="745" FontSize="16" RenderTransformOrigin="4.429,0.471" Content=""/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="760" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="DECELERATION"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ScrollBar x:Name="Nload_Decel2" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" Margin="5,0,0,0" VerticalAlignment="Top" Width="745" RenderTransformOrigin="0.5,0.5" Background="#FFA9B018" Scroll="Nload_Ispeed_Scroll" SmallChange="1" LargeChange="10" Maximum="200" Minimum="1" Value="30"/>
+                                        <Label HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="20" FontSize="16" RenderTransformOrigin="4.429,0.471" />
+                                        <TextBox x:Name="Nload_value_Decel2" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="45"  TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="16" Text="{Binding Value, ElementName=Nload_Decel}" RenderTransformOrigin="4.429,0.471"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </TabItem>
+                            <TabItem x:Name="tab_Load2" Header="NORMAL" Width="200" Height="30" HorizontalAlignment="Left" >
+                                <TabItem.Background>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                                        <GradientStop Color="#FF0F7AD3" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </TabItem.Background>
+                                <StackPanel Orientation="Vertical" >
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="760" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="INITIAL SPEED"/>
+                                        <Label HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="(1~200)"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ScrollBar x:Name="Load_Ispeed2" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" Margin="5,0,0,0" VerticalAlignment="Top" Width="745" RenderTransformOrigin="0.5,0.5" Background="#FFCF5814" Scroll="Load_Ispeed_Scroll" SmallChange="1" LargeChange="10" Maximum="200" Minimum="1" Value="30"/>
+                                        <Label HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="20" FontSize="16" RenderTransformOrigin="4.429,0.471" />
+                                        <TextBox x:Name="Load_value_Ispeed2" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="45"  TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="16" Text="{Binding Value, ElementName=Load_Ispeed}" RenderTransformOrigin="4.429,0.471"/>
+                                    </StackPanel>
+                                    <Label HorizontalAlignment="Left" Height="5" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="745" FontSize="16" RenderTransformOrigin="4.429,0.471" Content=""/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="760" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="TARGET SPEED"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ScrollBar x:Name="Load_Tspeed2" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" Margin="5,0,0,0" VerticalAlignment="Top" Width="745" RenderTransformOrigin="0.5,0.5" Background="#FFB01818" Scroll="Load_Ispeed_Scroll" SmallChange="1" LargeChange="10" Maximum="200" Minimum="1" Value="30"/>
+                                        <Label HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="20" FontSize="16" RenderTransformOrigin="4.429,0.471" />
+                                        <TextBox x:Name="Load_value_Tspeed2" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="45"  TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="16" Text="{Binding Value, ElementName=Load_Tspeed}" RenderTransformOrigin="4.429,0.471"/>
+                                    </StackPanel>
+                                    <Label HorizontalAlignment="Left" Height="5" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="745" FontSize="16" RenderTransformOrigin="4.429,0.471" Content=""/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="760" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="ACCELERATION"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ScrollBar x:Name="Load_Accel2" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" Margin="5,0,0,0" VerticalAlignment="Top" Width="745" RenderTransformOrigin="0.5,0.5" Background="#FF1AB93E" Scroll="Load_Ispeed_Scroll" SmallChange="1" LargeChange="10" Maximum="200" Minimum="1" Value="30"/>
+                                        <Label HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="20" FontSize="16" RenderTransformOrigin="4.429,0.471" />
+                                        <TextBox x:Name="Load_value_Accel2" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="45"  TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="16" Text="{Binding Value, ElementName=Load_Accel}" RenderTransformOrigin="4.429,0.471"/>
+                                    </StackPanel>
+                                    <Label HorizontalAlignment="Left" Height="5" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="745" FontSize="16" RenderTransformOrigin="4.429,0.471" Content=""/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="760" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="DECELERATION"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ScrollBar x:Name="Load_Decel2" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" Margin="5,0,0,0" VerticalAlignment="Top" Width="745" RenderTransformOrigin="0.5,0.5" Background="#FFA9B018" Scroll="Load_Ispeed_Scroll" SmallChange="1" LargeChange="10" Maximum="200" Minimum="1" Value="30"/>
+                                        <Label HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="20" FontSize="16" RenderTransformOrigin="4.429,0.471" />
+                                        <TextBox x:Name="Load_value_Decel2" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="45"  TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="16" Text="{Binding Value, ElementName=Load_Decel}" RenderTransformOrigin="4.429,0.471"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </TabItem>
+                            <TabItem x:Name="tab_SOL2" Header="SOL" Width="200" Height="30" HorizontalAlignment="Left" >
+                                <TabItem.Background>
+                                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                                        <GradientStop Color="#FF1875C1" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </TabItem.Background>
+                                <StackPanel Orientation="Vertical" >
+                                    <Label HorizontalAlignment="Left" Height="10" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="745" FontSize="16" RenderTransformOrigin="4.429,0.471" Content=""/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="760" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="SOL ON TIME"/>
+                                        <Label HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="70" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="(1~200)"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ScrollBar x:Name="Sol_Ontime2" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" Margin="5,0,0,0" VerticalAlignment="Top" Width="745" RenderTransformOrigin="0.5,0.5" Background="#FFCF5814" Scroll="Sol_Ontime_Scroll" SmallChange="1" LargeChange="10" Maximum="200" Minimum="1" Value="30"/>
+                                        <Label HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="20" FontSize="16" RenderTransformOrigin="4.429,0.471" />
+                                        <TextBox x:Name="txtSolOnTime2" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="45"  TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="16" Text="{Binding Value, ElementName=Sol_Ontime}" RenderTransformOrigin="4.429,0.471"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="372" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="    FAST"/>
+                                        <Label HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="372" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="SLOW  "/>
+                                    </StackPanel>
+                                    <Label HorizontalAlignment="Left" Height="10" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="745" FontSize="16" RenderTransformOrigin="4.429,0.471" Content=""/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="745" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="SOL OFF TIME"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ScrollBar x:Name="Sol_Offtime2" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" Margin="5,0,0,0" VerticalAlignment="Top" Width="745" RenderTransformOrigin="0.5,0.5" Background="#FFB01818" Scroll="Sol_Offtime_Scroll" SmallChange="1" LargeChange="10" Maximum="200" Minimum="1" Value="30"/>
+                                        <Label HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="20" FontSize="16" RenderTransformOrigin="4.429,0.471" />
+                                        <TextBox x:Name="txtSolOffTime2" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="45"  TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="16" Text="{Binding Value, ElementName=Sol_Offtime}" RenderTransformOrigin="4.429,0.471"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="372" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="    FAST"/>
+                                        <Label HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="372" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="SLOW  "/>
+                                    </StackPanel>
+                                    <Label HorizontalAlignment="Left" Height="10" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="745" FontSize="16" RenderTransformOrigin="4.429,0.471" Content=""/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="745" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="Acceleration"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ScrollBar x:Name="Dwell_time2" Orientation="Horizontal" HorizontalAlignment="Left" Height="45" Margin="5,0,0,0" VerticalAlignment="Top" Width="745" RenderTransformOrigin="0.5,0.5" Background="#FF1AB93E" Scroll="Dwell_time_Scroll_1" SmallChange="1" LargeChange="10" Maximum="200" Minimum="1" Value="30"/>
+                                        <Label HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="20" FontSize="16" RenderTransformOrigin="4.429,0.471" />
+                                        <TextBox x:Name="txtDwellTime2" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="45"  TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontSize="16" Text="{Binding Value, ElementName=Dwell_time}" RenderTransformOrigin="4.429,0.471"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="372" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="    FAST"/>
+                                        <Label HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="372" FontSize="16" RenderTransformOrigin="4.429,0.471" Content="SLOW  "/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </TabItem>
+                        </TabControl>
+                    </Grid>
+                </TabItem>-->
+        </TabControl>
+        <StackPanel Orientation="Horizontal" Margin="40,51,0,0" Height="40" Width="1123" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Label Content="PATTERN" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="40"  VerticalContentAlignment="Center" VerticalAlignment="Top" Width="185" FontSize="16" FontWeight="Bold"/>
+            <Label Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="40" VerticalAlignment="Top" Width="30" FontSize="14"/>
+            <ComboBox x:Name="cbxPatternList" HorizontalAlignment="Left" VerticalContentAlignment="Center"  VerticalAlignment="Top" Width="205" Height="40" SelectionChanged="cbxPatternList_SelectionChanged" FontSize="16" FontWeight="Bold"/>
+            <Label Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="40" VerticalAlignment="Top" Width="125" FontSize="14"/>
+            <Button x:Name="btnSavePattern" Content="SAVE PATTERN" Height="40" Width="135" RenderTransformOrigin="17.697,2" FontSize="16" FontWeight="Bold" Click="btnSavePattern_Click"/>
+            <Label Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="40" VerticalAlignment="Top" Width="125" FontSize="14"/>
+            <Button x:Name="btnSaveAsPattern" Content="SAVE AS" HorizontalAlignment="Left" Height="40"  VerticalAlignment="Top" Width="135" RenderTransformOrigin="17.697,2" FontSize="14" FontWeight="Bold" Click="btnSaveAsPattern_Click"/>
+            <Label Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="40" VerticalAlignment="Top" Width="10" FontSize="14"/>
+            <!--<TextBox x:Name="txtPatternName" HorizontalAlignment="Left" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" VerticalContentAlignment="Center" FontSize="16"/>-->
+        </StackPanel>
+
+        <Button x:Name="btnExit" Content="EXIT" HorizontalAlignment="Left" Height="42" 
+                Style="{StaticResource ITNTButton}" Margin="1454,51,0,0" VerticalAlignment="Top" Width="116" FontWeight="Bold" FontSize="18" FontFamily="Global Sans Serif" IsDefault="True" Click="btnExit_Click" RenderTransformOrigin="0.172,1.071" IsCancel="True"/>
+        <ListBox x:Name="lsbResult" HorizontalAlignment="Left" Height="184" Margin="40,690,0,0" VerticalAlignment="Top" Width="840" BorderBrush="Black" BorderThickness="2"/>
+    </Grid>
+</Window>

@@ -1,0 +1,143 @@
+﻿<Window x:Class="ITNTMARK.SelectSeqDataWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITNTMARK"
+        mc:Ignorable="d"
+        Title="SelectSeqDataWindow" Height="650" Width="1100">
+    <Grid>
+        <Label x:Name="lblConfrimMsg1" Content="Select data to be marked and press [OK] button." HorizontalAlignment="Left" Height="34" Margin="50,17,0,0" VerticalAlignment="Top" Width="780" FontFamily="Global Sans Serif" FontWeight="Bold" FontSize="18"/>
+        <Label x:Name="lblConfrimMsg2" Content="If there is no data select car type and enter VIN data and press [NEW DATA MARK] button." HorizontalAlignment="Left" Height="34" Margin="50,51,0,0" VerticalAlignment="Top" Width="780" FontFamily="Global Sans Serif" FontWeight="Bold" FontSize="18"/>
+        <Label x:Name="lblConfrimMsg3" Content="Press [PASS] button to pass current shuttle without marking." HorizontalAlignment="Left" Height="34" Margin="50,85,0,0" VerticalAlignment="Top" Width="780" FontFamily="Global Sans Serif" FontSize="18" FontWeight="Bold"/>
+
+        <DataGrid x:Name="dgdSeqData" HorizontalAlignment="Left" Height="145" Margin="50,155,0,0" VerticalAlignment="Top" Width="805" RowHeaderWidth="0" AutoGenerateColumns="False" CanUserSortColumns="False" SelectionMode="Single" IsReadOnly="True"
+            RowHeight="30" VerticalContentAlignment="Center">
+            <DataGrid.ColumnHeaderStyle>
+                <StaticResource ResourceKey="HeaderStyle"/>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Copy VIN Data" Height="30" FontSize="18" FontWeight="Bold" Click="MenuItem_CopyVinData" Foreground="Red"/>
+                    <!--<Separator Visibility="Visible"/>
+                    <MenuItem Header="Completion Marking" Height="30" FontSize="18" FontWeight="Bold" Click="MenuItem_Move2Complete" Foreground="Red"/>
+                    <Separator Visibility="Visible"/>
+                    <MenuItem Header="Delete Data" Height="30" FontSize="18" FontWeight="Bold" Click="MenuItem_DeleteData" Foreground="Red"/>-->
+                    <!--<Separator Visibility="Visible"/>
+                        <MenuItem Header="수동 각인" Height="30" FontSize="18" FontWeight="Bold" Click="MenuItem_ManualMarkPlanData" Foreground="Red"/>-->
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="DATE" Width="4*" Binding="{Binding PRODUCTDATE, StringFormat=\{0:yyyy-MM-dd\}}" Visibility="Collapsed">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextAlignment" Value="Center"/>
+                            <Setter Property="FontSize" Value="17"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="SEQ" Width="2*" Binding="{Binding SEQUENCE}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextAlignment" Value="Center"/>
+                            <Setter Property="FontSize" Value="17"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="VIN" Width="7*" Binding="{Binding VIN}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextAlignment" Value="Center"/>
+                            <Setter Property="FontSize" Value="17"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="MODEL" Width="2*" Binding="{Binding CARTYPE}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextAlignment" Value="Center"/>
+                            <Setter Property="FontSize" Value="17"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <DataGridTextColumn Header="CAR TYPE" Width="3*" Binding="{Binding RAWCARTYPE}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextAlignment" Value="Center"/>
+                            <Setter Property="FontSize" Value="17"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <!--<DataGridTextColumn Header="Region" Width="2*" Binding="{Binding IDPLATE}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="PLC값" Width="2*" Binding="{Binding PLCVALUE}">
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextAlignment" Value="Center"/>
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>-->
+
+                <DataGridTextColumn Header="CHECKFLAG" Binding="{Binding CHECKFLAG}" Visibility="Hidden">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextAlignment" Value="Center"/>
+                            <Setter Property="FontSize" Value="17"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="42" 
+            Style="{StaticResource ITNTButton}" Margin="905,155,0,0" VerticalAlignment="Top" Width="115" FontWeight="Bold" FontSize="18" FontFamily="Global Sans Serif" IsDefault="True" Click="btnOK_Click"/>
+        <Button x:Name="btnPass" Content="PASS" HorizontalAlignment="Left" Height="42" 
+            Style="{StaticResource ITNTButton}" Margin="905,208,0,0" VerticalAlignment="Top" Width="115" FontWeight="Bold" FontSize="18" FontFamily="Global Sans Serif" IsDefault="True" Click="btnPass_Click" Visibility="Collapsed"/>
+        <Button x:Name="btnCancel" Content="CANCEL" HorizontalAlignment="Left" Height="42" 
+            Style="{StaticResource ITNTButton}" Margin="905,258,0,0" VerticalAlignment="Top" Width="115" FontWeight="Bold" FontSize="18" FontFamily="Global Sans Serif" IsDefault="True" IsCancel="True" />
+
+        <Grid Visibility="Collapsed">
+            <GroupBox x:Name="groupBox" Header="NEW DATA" HorizontalAlignment="Left" Height="183" Margin="40,337,0,0" VerticalAlignment="Top" Width="995" FontSize="16" FontWeight="Bold" BorderBrush="Red" BorderThickness="2" Foreground="Red">
+                <Label x:Name="label" Content="(The sequece can be blank.)" HorizontalAlignment="Left" Height="30" Margin="714,119,0,0" VerticalAlignment="Top" Width="210" FontWeight="Normal" FontSize="12"/>
+            </GroupBox>
+            <ComboBox x:Name="cbxCarType" HorizontalAlignment="Left" Height="30" Margin="70,430,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="125" FontSize="18" FontWeight="Bold" Padding="5,0"/>
+            <TextBox x:Name="txtVINData" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="44" Margin="215,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="465" Background="#FF816565" FontSize="30" TextChanged="txtVINData_TextChanged"/>
+            <Label Content="V.I.N." HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="20" Margin="215,405,0,0" VerticalAlignment="Top" Width="465" FontFamily="Global Sans Serif" FontSize="18" Padding="5,0" RenderTransformOrigin="0.505,0"/>
+            <Label Content="Select Car Type" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="20" VerticalAlignment="Top" Width="135" FontFamily="Global Sans Serif" FontSize="16" Padding="5,0" RenderTransformOrigin="0.505,0" Margin="65,405,0,0" FontWeight="Bold"/>
+            <Label x:Name="lblVINLength" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="44" Margin="685,430,0,0" VerticalAlignment="Top" Width="45" FontFamily="Global Sans Serif" FontSize="26" Padding="0" Background="#FF958787"/>
+            <Label Content="SEQUENCE NO." HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="20" Margin="750,405,0,0" VerticalAlignment="Top" Width="150" FontFamily="Global Sans Serif" FontSize="18" Padding="5,0" RenderTransformOrigin="0.505,0"/>
+            <TextBox x:Name="txtSequence" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="44" Margin="760,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="130" FontSize="30" BorderBrush="Black" BorderThickness="1.5"/>
+            <Button x:Name="btnNew" Content="NEW DATA&#xA;    MARK" HorizontalAlignment="Left" Height="56" 
+            Style="{StaticResource ITNTButton}" Margin="905,360,0,0" VerticalAlignment="Top" Width="115" FontWeight="Bold" FontSize="18" FontFamily="Global Sans Serif" IsDefault="True" Click="btnNew_Click"/>
+
+        </Grid>
+        <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="104" Margin="935,15,0,0" VerticalAlignment="Top" Width="141" Visibility="Hidden">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Label x:Name="lblErrorMessage" Content="" HorizontalAlignment="Left" Height="40" Margin="50,545,0,0" VerticalAlignment="Top" Width="970" FontSize="20" Foreground="Red" FontWeight="Bold"/>
+    </Grid>
+</Window>

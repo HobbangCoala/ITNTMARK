@@ -1,0 +1,230 @@
+﻿<Window x:Class="ITNTMARK.TestLaserSourceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITNTMARK"
+        mc:Ignorable="d"
+        Title="TestLaserSourceWindow" Height="900" Width="1600" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="80*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="600*"/>
+            <RowDefinition Height="200*"/>
+        </Grid.RowDefinitions>
+
+        <Grid >
+            <Button x:Name="btnOPEN" Content="OPEN" HorizontalAlignment="Left" Margin="20,25,0,0" VerticalAlignment="Top" Width="135" Height="40" FontSize="18" FontWeight="Bold" Click="btnOPEN_Click"/>
+            <Button x:Name="btnCLOSE" Content="CLOSE" HorizontalAlignment="Left" Margin="219,25,0,0" VerticalAlignment="Top" Width="135" Height="40" FontSize="18" FontWeight="Bold" Click="btnCLOSE_Click"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Button x:Name="btnExit" Content="EXIT" HorizontalAlignment="Left" Height="55" 
+                Style="{StaticResource ITNTButton}" Margin="240,20,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold" FontSize="18" FontFamily="Global Sans Serif" IsDefault="True" Click="btnExit_Click" RenderTransformOrigin="0.172,1.071" IsCancel="True"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="" Width="20"/>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED00" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED01" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED02" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED03" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED004" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED05" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED06" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED07" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                </StackPanel>
+                <Label Content="" Width="20"/>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED10" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED11" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED12" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED13" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED014" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED15" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED16" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED17" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                </StackPanel>
+                <Label Content="" Width="20"/>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED20" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED21" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED22" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED23" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED24" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED25" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED26" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED27" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                </StackPanel>
+                <Label Content="" Width="20"/>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED30" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED31" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED32" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED33" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED34" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED35" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED36" Width="35" Height="35"/>
+                        <Label Content="CMD Buffer Overflow" FontSize="14" Width="150"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="0" Width="20" Height="35"/>
+                        <Image x:Name="imgStatusLED37" Width="35" Height="35"/>
+                        <Label Content="High Average Power" FontSize="14" Width="150"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Button x:Name="btnReadDeviceStatus" Content="READ STATUS"    HorizontalAlignment="Left" Margin="10,5,0,0"   VerticalAlignment="Top" Width="134" Height="40" FontSize="14" FontWeight="Bold" Click="btnReadDeviceStatus_Click"/>
+            <Button x:Name="btnEMISSION"         Content="EMISSION ON"    HorizontalAlignment="Left" Margin="10,55,0,0"  VerticalAlignment="Top" Width="134" Height="40" FontSize="14" FontWeight="Bold" Click="btnEMISSION_Click"/>
+            <Button x:Name="btnSelectProfile"    Content="SELECT PROFILE" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="135" Height="40" FontSize="14" FontWeight="Bold" Click="btnSelectProfile_Click"  />
+            <Button x:Name="btnConfigWaveForm"   Content="CONFIG WAVE"    HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Width="135" Height="40" FontSize="14" FontWeight="Bold" Click="btnConfigWaveForm_Click" />
+            <Button x:Name="btnAimingBeam"       Content="AIMING ON"      HorizontalAlignment="Left" Margin="10,205,0,0" VerticalAlignment="Top" Width="134" Height="40" FontSize="14" FontWeight="Bold" Click="btnAimingBeam_Click" />
+            <Button x:Name="btnReadInfo"         Content="LASER INFO"     HorizontalAlignment="Left" Margin="10,255,0,0" VerticalAlignment="Top" Width="134" Height="40" FontSize="14" FontWeight="Bold" Click="btnReadInfo_Click" />
+            <Button x:Name="btnSetExtControl"    Content="EXT CONTROL"    HorizontalAlignment="Left" Margin="10,305,0,0" VerticalAlignment="Top" Width="135" Height="40" FontSize="14" FontWeight="Bold" Click="btnSetExtControl_Click" />
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <ListBox x:Name="lsbResult" HorizontalAlignment="Left" Height="185" Margin="10,0,0,0" VerticalAlignment="Top" Width="1180"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+        </Grid>
+
+        <Label Content="IP" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="40" Margin="385,31,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="59" FontSize="18" FontWeight="Bold"/>
+        <TextBox x:Name="txbLaserSourceIP" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="192.168.0.50" Margin="444,26,553,26" FontSize="18" FontWeight="Bold"/>
+
+       <Label Content="PORT" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="40" Margin="707,31,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="59" FontSize="18" FontWeight="Bold"/>
+        <TextBox x:Name="txbLaserSourcePort" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="192.168.0.50" Margin="766,26,231,27" FontSize="18" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,18 @@
+﻿<Window x:Class="ITNTMARK.ConfirmWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITNTMARK"
+        mc:Ignorable="d"
+        Title="Confirm Window" Height="260" Width="560" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Label x:Name="lblConfrimMsg1" Content="" HorizontalAlignment="Left" Height="30" Margin="30,25,0,0" VerticalAlignment="Top" Width="500" FontFamily="Global Sans Serif" FontWeight="Bold" FontSize="20"/>
+        <Label x:Name="lblConfrimMsg2" Content="" HorizontalAlignment="Left" Height="30" Margin="30,55,0,0" VerticalAlignment="Top" Width="500" FontFamily="Global Sans Serif" FontWeight="Bold" FontSize="20"/>
+        <Label x:Name="lblConfrimMsg3" Content="" HorizontalAlignment="Left" Height="30" Margin="30,85,0,0" VerticalAlignment="Top" Width="500" FontFamily="Global Sans Serif" FontWeight="Bold" FontSize="20"/>
+        <Label x:Name="lblConfrimMsg4" Content="" HorizontalAlignment="Left" Height="30" Margin="30,115,0,0" VerticalAlignment="Top" Width="500" FontFamily="Global Sans Serif" FontWeight="Bold" FontSize="20"/>
+        <Button x:Name="btnOK" Content="" Style="{StaticResource ITNTButton}" HorizontalAlignment="Left" Margin="132,180,0,0" VerticalAlignment="Top" Width="105" Height="37" IsDefault="True" FontFamily="Global Sans Serif" FontSize="14" FontWeight="Bold" Click="btnOK_Click"/>
+        <Button x:Name="btnCancel" Content="" Style="{StaticResource ITNTButton}" HorizontalAlignment="Left" Margin="317,180,0,0" VerticalAlignment="Top" Width="105" Height="37" FontSize="14" FontFamily="Global Sans Serif" FontWeight="Bold" IsDefault="True" IsCancel="True"/>
+        <Button x:Name="btnOK2" Content="" Style="{StaticResource ITNTButton}" HorizontalAlignment="Left" Margin="224,180,0,0" VerticalAlignment="Top" Width="105" Height="37" IsDefault="True" FontFamily="Global Sans Serif" FontSize="14" FontWeight="Bold" Visibility="Hidden" IsCancel="True"/>
+    </Grid>
+</Window>

@@ -1,0 +1,67 @@
+﻿<Window x:Class="ITNTMARK.InsertDataWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITNTMARK"
+        mc:Ignorable="d"
+        Title="InsertDataWindow" Height="370" Width="1100">
+    <Grid>
+        <Label x:Name="lblConfrimMsg1" Content="ENTER SEQUENCE, VIN, AND CAR TYPE." HorizontalAlignment="Left" Height="34" Margin="50,17,0,0" VerticalAlignment="Top" Width="780" FontFamily="Global Sans Serif" FontWeight="Bold" FontSize="18"/>
+        <Label x:Name="lblConfrimMsg2" Content="IF YOU WANT TO INSERT DATA, PRESS [OK] BUTTON." HorizontalAlignment="Left" Height="34" Margin="50,51,0,0" VerticalAlignment="Top" Width="780" FontFamily="Global Sans Serif" FontWeight="Bold" FontSize="18"/>
+        <Label x:Name="lblConfrimMsg3" Content="IF YOU WANT TO CANCEL, PRESS [CANCEL] BUTTON." HorizontalAlignment="Left" Height="34" Margin="50,85,0,0" VerticalAlignment="Top" Width="780" FontFamily="Global Sans Serif" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Height="45" 
+            Style="{StaticResource ITNTButton}" Margin="950,160,0,0" VerticalAlignment="Top" Width="115" FontWeight="Bold" FontSize="18" FontFamily="Global Sans Serif" IsDefault="True" Click="btnOK_Click"/>
+        <Button x:Name="btnCancel" Content="CANCEL" HorizontalAlignment="Left" Height="45" 
+            Style="{StaticResource ITNTButton}" Margin="950,210,0,0" VerticalAlignment="Top" Width="115" FontWeight="Bold" FontSize="18" FontFamily="Global Sans Serif" IsDefault="True" IsCancel="True" />
+        <!--<GroupBox x:Name="groupBox" Header="NEW DATA" HorizontalAlignment="Left" Height="183" Margin="40,337,0,0" VerticalAlignment="Top" Width="995" FontSize="16" FontWeight="Bold" BorderBrush="Red" BorderThickness="2" Foreground="Red">
+            <Label x:Name="label" Content="(The sequece can be blank.)" HorizontalAlignment="Left" Height="30" Margin="714,119,0,0" VerticalAlignment="Top" Width="210" FontWeight="Normal" FontSize="12"/>
+        </GroupBox>-->
+
+        <StackPanel x:Name="stpPrev" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,130,0,0" Width="885">
+            <Label Content="SEQUENCE" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="25" Margin="0,0,0,0" VerticalAlignment="Top" Width="130" FontFamily="Global Sans Serif" FontSize="16" FontWeight="Bold"/>
+            <Label Height="20" Width="30"/>
+            <Label Content="V.I.N." HorizontalContentAlignment="Center" Height="25" Margin="0,0,0,0" VerticalAlignment="Top" Width="505" FontFamily="Global Sans Serif" FontSize="18" FontWeight="Bold"/>
+            <Label Height="20" Width="80"/>
+            <Label Content="CAR TYPE" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="25" VerticalAlignment="Top" Width="130" FontFamily="Global Sans Serif" FontSize="16" Margin="0,0,0,0" FontWeight="Bold"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,160,0,0" Width="885">
+            <Label x:Name="lblSequencePrev" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="45" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="130" FontSize="30" BorderBrush="Gray" BorderThickness="1" Foreground="DimGray"/>
+            <Label Height="20" Width="30"/>
+            <Label x:Name="lblVINDataPrev" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="45" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="515" FontSize="30" BorderBrush="Gray" BorderThickness="1" Foreground="Gray"/>
+            <Label Height="20" Width="50"/>
+            <Label Height="20" Width="30"/>
+            <Label x:Name="lblCarTypePrev" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="45" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="130" FontSize="30" BorderBrush="Gray" BorderThickness="1" Foreground="DimGray"/>
+        </StackPanel>
+        <StackPanel x:Name="stpNext" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,210,0,0" Width="885">
+            <TextBox x:Name="txtSequence" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="45" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="130" FontSize="30" BorderBrush="Black" BorderThickness="1.5"/>
+            <Label Height="20" Width="30"/>
+            <TextBox x:Name="txtVINData" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="45" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="515" Background="#FF816565" FontSize="30" TextChanged="txtVINData_TextChanged"/>
+            <Label Height="20" Width="5"/>
+            <Label x:Name="lblVINLength" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="45" Margin="0,0,0,0" VerticalAlignment="Top" Width="45" FontFamily="Global Sans Serif" FontSize="26" Padding="0" Background="#FF958787"/>
+            <Label Height="20" Width="30"/>
+            <TextBox x:Name="txtCarType" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="45" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="130" FontSize="30" BorderBrush="Black" BorderThickness="1.5"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,260,0,0" Width="885">
+            <Label x:Name="lblSequenceNext" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="45" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="130" FontSize="30" BorderBrush="Gray" BorderThickness="1" Foreground="DimGray"/>
+            <Label Height="20" Width="30"/>
+            <Label x:Name="lblVINDataNext" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="45" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="515" FontSize="30" BorderBrush="Gray" BorderThickness="1" Foreground="DimGray"/>
+            <Label Height="20" Width="50"/>
+            <Label Height="20" Width="30"/>
+            <Label x:Name="lblCarTypeNext" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="45" Margin="0,0,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="130" FontSize="30" BorderBrush="Gray" BorderThickness="1" Foreground="DimGray"/>
+        </StackPanel>
+
+        <!--<Label Content="CAR MODEL" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="25" VerticalAlignment="Top" Width="130" FontFamily="Global Sans Serif" FontSize="16" Margin="50,130,0,0" FontWeight="Bold"/>-->
+
+
+
+        <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="104" Margin="935,15,0,0" VerticalAlignment="Top" Width="141" Visibility="Hidden">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Label x:Name="lblErrorMessage" Content="" HorizontalAlignment="Left" Height="67" Margin="50,250,0,0" VerticalAlignment="Top" Width="970" FontSize="20" Foreground="Red" FontWeight="Bold" Visibility="Collapsed"/>
+    </Grid>
+</Window>
